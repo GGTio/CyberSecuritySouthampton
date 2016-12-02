@@ -1,9 +1,0 @@
-\select@language {english}
-\contentsline {section}{\numberline {1}I<ntroduction}{3}
-\contentsline {subsection}{\numberline {1.1}what is cyber security?}{3}
-\contentsline {subsection}{\numberline {1.2}Challenges ?}{3}
-\contentsline {subsection}{\numberline {1.3}Unfair ?}{3}
-\contentsline {subsection}{\numberline {1.4}What is needed ?}{3}
-\contentsline {subsection}{\numberline {1.5}Numbers}{4}
-\contentsline {subsection}{\numberline {1.6}Malware is only half of the story}{6}
-\contentsline {subsection}{\numberline {1.7}Old is the new door}{6}
