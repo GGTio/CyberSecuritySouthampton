@@ -1,0 +1,233 @@
+Stack Trace
+
+    CORE/Cake/View/View.php line 468 → View->_getViewFileName(string)
+
+                return;
+            }
+
+            if ($view !== false && $viewFileName = $this->_getViewFileName($view)) {
+                $this->_currentType = self::TYPE_VIEW;
+
+    'display/qpi'
+
+    CORE/Cake/Controller/Controller.php line 954 → View->render(string, null)
+
+            }
+
+            $this->autoRender = false;
+            $this->response->body($this->View->render($view, $layout));
+            return $this->response;
+
+    'display/qpi'
+    null
+
+    APP/Controller/PagesController.php line 74 → Controller->render(string)
+
+            $this->set(compact('page', 'subpage', 'title_for_layout'));
+
+            try {
+                $this->render(implode('/', $path));
+            } catch (MissingViewException $e) {
+
+    'display/qpi'
+
+    [internal function] → PagesController->display(string, string)
+
+    'display'
+    'qpi'
+
+    CORE/Cake/Controller/Controller.php line 490 → ReflectionMethod->invokeArgs(PagesController, array)
+
+                        'action' => $request->params['action']
+                    ));
+                }
+                return $method->invokeArgs($this, $request->params['pass']);
+
+    object(PagesController) {
+    	uses => array(
+    		[maximum depth reached]
+    	)
+    	helpers => array(
+    		[maximum depth reached]
+    	)
+    	components => array(
+    		[maximum depth reached]
+    	)
+    	name => 'Pages'
+    	request => object(CakeRequest) {}
+    	response => object(CakeResponse) {}
+    	viewPath => 'Pages'
+    	layoutPath => null
+    	viewVars => array(
+    		[maximum depth reached]
+    	)
+    	view => 'display'
+    	layout => 'default'
+    	autoRender => false
+    	autoLayout => true
+    	Components => object(ComponentCollection) {}
+    	viewClass => 'View'
+    	View => object(View) {}
+    	ext => '.ctp'
+    	plugin => null
+    	cacheAction => false
+    	passedArgs => array(
+    		[maximum depth reached]
+    	)
+    	scaffold => false
+    	methods => array(
+    		[maximum depth reached]
+    	)
+    	modelClass => 'Page'
+    	modelKey => 'page'
+    	validationErrors => null
+    	Session => object(SessionComponent) {}
+    	Auth => object(AuthComponent) {}
+    	HackAttack => object(HackAttackComponent) {}
+    	Hack => object(Hack) {}
+    	[protected] _responseClass => 'CakeResponse'
+    	[protected] _mergeParent => 'AppController'
+    	[protected] _eventManager => object(CakeEventManager) {}
+    }
+    array(
+    	(int) 0 => 'display',
+    	(int) 1 => 'qpi'
+    )
+
+    CORE/Cake/Routing/Dispatcher.php line 191 → Controller->invokeAction(CakeRequest)
+
+
+            $response = $controller->response;
+            $render = true;
+            $result = $controller->invokeAction($request);
+            if ($result instanceof CakeResponse) {
+
+    object(CakeRequest) {
+    	params => array(
+    		[maximum depth reached]
+    	)
+    	data => array([maximum depth reached])
+    	query => array([maximum depth reached])
+    	url => 'pages/display/qpi'
+    	base => ''
+    	webroot => '/'
+    	here => '/pages/display/qpi'
+    	[protected] _detectors => array(
+    		[maximum depth reached]
+    	)
+    	[protected] _input => ''
+    }
+
+    CORE/Cake/Routing/Dispatcher.php line 165 → Dispatcher->_invoke(PagesController, CakeRequest)
+
+                ));
+            }
+
+            $response = $this->_invoke($controller, $request);
+            if (isset($request->params['return'])) {
+
+    object(PagesController) {
+    	uses => array(
+    		[maximum depth reached]
+    	)
+    	helpers => array(
+    		[maximum depth reached]
+    	)
+    	components => array(
+    		[maximum depth reached]
+    	)
+    	name => 'Pages'
+    	request => object(CakeRequest) {}
+    	response => object(CakeResponse) {}
+    	viewPath => 'Pages'
+    	layoutPath => null
+    	viewVars => array(
+    		[maximum depth reached]
+    	)
+    	view => 'display'
+    	layout => 'default'
+    	autoRender => false
+    	autoLayout => true
+    	Components => object(ComponentCollection) {}
+    	viewClass => 'View'
+    	View => object(View) {}
+    	ext => '.ctp'
+    	plugin => null
+    	cacheAction => false
+    	passedArgs => array(
+    		[maximum depth reached]
+    	)
+    	scaffold => false
+    	methods => array(
+    		[maximum depth reached]
+    	)
+    	modelClass => 'Page'
+    	modelKey => 'page'
+    	validationErrors => null
+    	Session => object(SessionComponent) {}
+    	Auth => object(AuthComponent) {}
+    	HackAttack => object(HackAttackComponent) {}
+    	Hack => object(Hack) {}
+    	[protected] _responseClass => 'CakeResponse'
+    	[protected] _mergeParent => 'AppController'
+    	[protected] _eventManager => object(CakeEventManager) {}
+    }
+    object(CakeRequest) {
+    	params => array(
+    		[maximum depth reached]
+    	)
+    	data => array([maximum depth reached])
+    	query => array([maximum depth reached])
+    	url => 'pages/display/qpi'
+    	base => ''
+    	webroot => '/'
+    	here => '/pages/display/qpi'
+    	[protected] _detectors => array(
+    		[maximum depth reached]
+    	)
+    	[protected] _input => ''
+    }
+
+    APP/webroot/index.php line 108 → Dispatcher->dispatch(CakeRequest, CakeResponse)
+
+    $Dispatcher->dispatch(
+        new CakeRequest(),
+        new CakeResponse()
+    );
+
+    object(CakeRequest) {
+    	params => array(
+    		[maximum depth reached]
+    	)
+    	data => array([maximum depth reached])
+    	query => array([maximum depth reached])
+    	url => 'pages/display/qpi'
+    	base => ''
+    	webroot => '/'
+    	here => '/pages/display/qpi'
+    	[protected] _detectors => array(
+    		[maximum depth reached]
+    	)
+    	[protected] _input => ''
+    }
+    object(CakeResponse) {
+    	[protected] _statusCodes => array(
+    		[maximum depth reached]
+    	)
+    	[protected] _mimeTypes => array(
+    		[maximum depth reached]
+    	)
+    	[protected] _protocol => 'HTTP/1.1'
+    	[protected] _status => (int) 200
+    	[protected] _contentType => 'text/html'
+    	[protected] _headers => array(
+    		[maximum depth reached]
+    	)
+    	[protected] _body => null
+    	[protected] _file => null
+    	[protected] _fileRange => null
+    	[protected] _charset => 'UTF-8'
+    	[protected] _cacheDirectives => array([maximum depth reached])
+    	[protected] _cookies => array([maximum depth reached])
+    }
+

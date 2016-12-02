@@ -1,0 +1,80 @@
+==COMP6230 2016/17 Individual assignment 1 specification==
+
+* Assignment 1 - "Identify security risks in a website"
+* Deadline: before 11:45 on Tuesday 22 November 2016 (week 8)
+* Feedback: by Tuesday 13 December 2016
+* Effort: 25 hours 
+* Weighting: 20% of module evaluation
+
+==Overall==
+
+For this assignment, you are provided with an insecure website and your objective is to identify and describe the security vulnerabilities (or 'hacks') in the website. This assignment is designed to introduce you to the process of evaluating and analysing a system and successfully exploiting it. The website provides access to the financial services provided by 'Rob the Bank'. 
+
+This is an '''individual''' assignment: an important constraint is that you must use ''only'' the password specifically allocated to you while accessing the 'Rob the Bank' website and not allow anybody else to log in with your credentials. While you are allowed (and encouraged) to discuss general concepts with other students, all work specifically on the assignment itself (i.e. when logged into the website and the short report submitted to the ECS Handin system) must be '''entirely''' your own work. This is a University requirement and any breach of academic integrity will be subject to penalties (see below). 
+
+For the avoidance of doubt, no attempt should be made to 'break into' the login system - this is not part of the assignment and will be treated as a breach of University regulations. For similar reasons, you are authorized to enter text into the website to discover these vulnerabilities but all other penatration testing techniques (e.g. social engineering, breach of physical security etc.) are explicitly forbidden.
+
+==Scenario== 
+
+This assignment uses the 'Rob the Bank' dedicated website at 
+
+
+https://robthebank.soton.ac.uk/
+
+
+Remember that when you are off campus you will need to connect to this website via the Global Protect VPN, the client for which can be downloaded at https://globalprotect.soton.ac.uk. 
+
+Please note that all activity on this website will be logged with a timestamp and used to record your progress on the assignment. This logging information will be available to inform the  assignment marking.
+
+All students will receive their 'Rob the Bank' individual password via email - if you have not received your individual credentials (or there is a problem with them)  please contact Oli Bills (copy to EJZ) as soon as possible.
+
+Under '''no circumstances''' should you attempt to login to the 'Rob the Bank' website using your usual ECS password (or indeed any password used for any other account that you might have elsewhere}. Please write your 'Rob the Bank' credentials down and keep them in a secure place where nobody other than yourself can access them.
+
+Once logged into the site, on the righthand side of each page you will see a heading "Rob's Hack Bar". Underneath this will be 15 boxes associated with the 15 different vulnerabilities in the website. As you discover a vulnerability, the associated box will turn green and a button will appear - click on this to go to a page where you can enter brief details of the vulnerability and how you discovered it. 
+
+:==========
+:Hack #1
+:==========
+:1) What vulnerability did you find?
+:<text to be typed in at the same time as the hack was found>
+:2) How did you find and exploit this vulnerability?
+:<text to be typed in at the same time as the hack was found>
+:(This format will be repeated for all the vulnerabilities that you found - e.g. Hack #2 etc.)
+
+Please note that you are NOT allowed to copy (using 'cut-and-paste' or otherwise) any text into these boxes other than text you have written yourself. Remember to click on the 'save' button after you have entered your notes. Each vulnerability has a corresponding description and a hint to provide further guidance. You are able to logoff and then return to the website at a later time - when you log back on your existing results will be displayed as before.
+
+==Submission==
+
+When you have discovered all 15 vulnerabilities (or as the assignment
+deadline approaches), you should check that all the information you have entered into the text boxes is correct (you can make changes if necessary, clicking on the 'save' button to record the change).
+
+Then click the "Submit" button on "Rob's Hack Bar" at the right-hand side (below Hack #15). This will take you to a summary page containing a box titled "Download your Hacks submission file". 
+Select all of the text in this box, save it as an ASCII text file "report.txt" (do NOT make any changes to the text: this file '''must''' be identical to the text in the "Download your Hacks submission file" box ) and then submit this file to the ECS Handin system as normal (keeping the same filename 'report.txt').
+
+Please note that the 'report.txt' file submitted should contain only ASCII text characters (i.e. it must '''not''' be a .doc, .docx or .pdf file) and in addition there is a size limit. The target size for this file is 1000 words (including the pre-supplied heading text) but no penalty will be applied unless the size of the file exceeds a total size of 3000 words (see below).
+
+==Key dates==
+
+* 1600 Wednesday 2 November 2016:  Assignment set
+* 1145 Tuesday 22 November 2016:   Assignment deadline
+* 1300 Tuesday 13 December 2016:  Feedback provided
+
+==Assessment==
+
+The assessment will be based on the information automatically recorded and logged by the website, together with the 'report.txt' file submitted and the log files.
+
+Each security vulnerability in the 'Rob the Bank' website discovered will count towards the mark awarded. A maximum of 20% of the overall module assessment is available if all 15 vulnerabilities are successfully found and correctly described.
+
+To receive credit for a specific vulnerability, the detection must have been logged on the website and an entry made in the associated pop-up text box '''at the time of detection'''. Additional marks will be assigned according to the quality of each explanation provided in the 'report.txt' submission. If a detection is logged but no description is provided, no credit will be awarded. Approximately 70% of the marks for the assignment will be awarded for identifying and describing vulnerabilities 1 to 10. The remaining marks will be awarded for identifying and describing vulnerabilities 11 to 15. These last five vulnerabilities are more difficult than the first ones, hence students are advised to concentrate on the first 10 initally and only attempt the last five (essentially for 'bonus' marks) once they are confident that they have solved the first 10.
+
+==Penalties==
+
+* Late submission will be penalized using the standard University rules (10% per working day) and  no work will be accepted that is more than five days late. For the avoidance of doubt, the 'submission time' is the time recorded by the ECS Handin system.
+ 
+* A penalty of 20% will be applied if the report.txt file is '''not''' an ASCII file (e.g. the penalty is applied if a .doc, .docx or .pdf file was submitted to the ECS Handin system)
+
+* A penalty of 20% will be applied if the report.txt file exceeds 3000 words (this includes the headings supplied automatically by the website as well as the text that you have typed in).
+
+* Please note the [http://www.calendar.soton.ac.uk/sectionIV/academic-integrity-regs.html Regulations Governing Academic Integrity] and [https://secure.ecs.soton.ac.uk/notes/comp3201/1516/ejz/Academic_Integrity_Guidance.pdf Academic Integrity Guidance] when undertaking this assignment and making your submission. You will be required as part of the ECS Handin process to confirm that the work submitted is all your own work. Any breach of academic integrity is subject to the penalties set out in the University regulations.
+
+EJZ

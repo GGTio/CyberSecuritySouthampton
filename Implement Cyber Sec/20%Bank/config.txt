@@ -1,0 +1,6 @@
+<?php 
+$config['db']['dbname'] = 'bank';
+$config['db']['server'] = 'robthebank.soton.ac.uk';
+$config['db']['password'] = 'a7f92jmv84hw9';
+$config['db']['username'] = 'mysql_ro'
+?>

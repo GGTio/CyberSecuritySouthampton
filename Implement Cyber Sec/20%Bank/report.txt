@@ -1,0 +1,225 @@
+==========
+Hack #1
+==========
+What vulnerability did you find?
+SQL injection + Bad Error handeling of the SQL server
+How did you find and exploit this vulnerability?
+1) Hint: SQL Injection + unusual place meaning not a simple form input (form parameters, URL, ..)
+2) Places:  where we access to DB and we have access to queries.
+Results: /transactions/transfer, /transactions and /transactions/bill
+3) Try and Error on all the possible entries with all possible values
+Results: [/transactions/bill] I tried to make the companies pay themselves but since they aren't in the database as normal users an SQL error appears. This shows the possibility to explore the DB by exploiting the Error output and available input for queries.
+==========
+Hack #2
+==========
+What vulnerability did you find?
+Information Disclosure of the system by leaving test files behind
+How did you find and exploit this vulnerability?
+1) Hints: Testing, left behind, information exposure. 
+2) Adding all the clues together => test/ testing/ test.php testing.php, debug/ debug.php.
+3) The exploit is given by /test.php and the result is not exactly what you would expect but luckily for us, we get a ton of information about the server. 
+==========
+Hack #3
+==========
+What vulnerability did you find?
+XSS in the URL for /accounts/index/<html></html>
+How did you find and exploit this vulnerability?
+1) Hints: XSS, GET Parameters, URL
+2) Places: Any place where your information is displayed afterward. (Unfortunately, the usual places don't work)
+3) Odd navigation bar -> /accounts/index/1 which the value 1 is displayed
+4) injecting code instead of the value -> XSS vulnerability
+==========
+Hack #4
+==========
+What vulnerability did you find?
+Image extension bypassing by uploading a real image with changed extension after request is sent with php code inside
+How did you find and exploit this vulnerability?
+1) Hints: upload malicious code
+2) Place: Obvious
+3) Research and analyzing upload behavior
+Results: 
+a) There is a boundary implemented Client side which we have to bypass
+b) We can inject code into an image
+c) The code must be php since the framework used is php.
+d) The extension given has to be an image but the extension uploaded must be a php.
+4) Using Burp Suite to intercept the request after the image is uploaded to bypass the boundary by adding the php extension after the image is uploaded and then forwarding the request.
+==========
+Hack #5
+==========
+What vulnerability did you find?
+Cross-Site Request Forgery to possible redirection to malicious url or download
+How did you find and exploit this vulnerability?
+1) Hint: not clear + "forced behavior"
+2) Last vulnerability from the book that relates the most to the hint: CSRF (found this hack after the all the ones from 1-11 where done)
+3) Understanding the general behavior of the attack:
+a) headers behavior
+b) Usual attack methodology ( redirection to malicious website or download )
+4) Attack:
+ I exploited the referrer header in the users/login request and added https://google.com if we don't add the http:// we do not get redirected outside of the website's scope.
+==========
+Hack #6
+==========
+What vulnerability did you find?
+Authorization bypass by accessing the admin panel
+How did you find and exploit this vulnerability?
+1) Hint: Authorization bypass + not clear
+2) Places: All the website
+3) Attack: try /admin /administrator /phpAdmin everywhere on the website
+4) /admin/loans gives access to the admin panel
+==========
+Hack #7
+==========
+What vulnerability did you find?
+Bad handeling from the page controller which output internal information after missing view is inputted.
+How did you find and exploit this vulnerability?
+1) Hint: Internal information + what looks like 3 folders
+2) Places: Everywhere but the hint pushes towards /pages/display/* . Analyzing the general behavior of the website to abnormal inputs.
+3) Trying a different input for /pages/display/random_input 
+4) The random input gave me internal access to the Stack trace because of bad handling of a missing view(our random input).
+==========
+Hack #8
+==========
+What vulnerability did you find?
+Form Parameter manipulation to "break" the transfer system and use it to make a "default user"  transfer money
+How did you find and exploit this vulnerability?
+1) Hint: Form Parameter manipulation
+2) Places: where we have forms.
+3) Testing the different parameters of the forms and see the reaction to unusual inputs.
+4) By entering 0 in the value "from" for the name=[Transaction][from] I realized I could change the sender to a special user 0 and use it to send myself money.
+5) This crashes the system because it doesn't recognize the name.
+==========
+Hack #9
+==========
+What vulnerability did you find?
+Illogical behavior for the forms of /transactions/bill, since we achieved a default user or user 0 to pay the bill for us
+How did you find and exploit this vulnerability?
+1) Hint: Illogical behavior
+2) Places: Everywhere.
+3) When testing for Form Parameters behavior found and illogical aspect of the bills
+4) Idea: make others users pay my bills
+5) Attack: changing the 2nd parameter in "name" to 0 -> "name"=[Transaction][0]
+Result: User 0 pays for your bills
+==========
+Hack #10
+==========
+What vulnerability did you find?
+Out of Date software in this case OpenBank that has a debug exploit that reveals users list
+How did you find and exploit this vulnerability?
+1) Hint: Hidden in the headers response
+2) Find the odd header: Openbank website seems fake.
+3) Try to access te links and git folders given in the page with no success
+4) Examine the page in depth
+5) Read carefully its content
+6) Old version of the software being used, search for vulnerabilities in version 0.5
+7) The sentence in section version 0.6 where it explains how they removed a URI for users is totally clear. I google the documentation of URI and my first try is /help?users=1 and it shows the vulnerability. The debug works with ?users=1 anywhere on the website.
+==========
+Hack #11
+==========
+What vulnerability did you find?
+File Inclusion exploit in the help pages in the URL parameter page which give us access to unauthorized files and files out of the scope. In this case we can access /etc/passwd (which is interesting but we can't access /et/shadow which is way more interesting)
+How did you find and exploit this vulnerability?
+1) Hint: HELP + different ways to exploit the help
+2) Place: help page specifically /help?pages=
+3) Try possible attacks (XSS,Injection) but countered by URL encoding
+4) Accessing other parts of the website:
+a) basic directory inclusion hack => test for "." 
+Result: Apache mod_security: Access to file has been denied. ALLOWED="/etc/pass*,/home/data/*,*.html"
+5)  Find the root directory [ repeating ../ a big number of times (../../../../../) will at some point give you "/" and applying ../ to the root returns the root] and try to access obvious passwd file
+6) I tried finding the other ones but no luck there unfortunately. 
+==========
+Hack #12
+==========
+What vulnerability did you find?
+Insecure Cookies giving using encoded serialized array to control session mode with flags.
+
+How did you find and exploit this vulnerability?
+1) Hint: Cookie + not cakePhP Cookie
+2) Place: Looking for an another cookie (obvious after the hours spent on the coursework you have noticed it) -> "__utmz[a]" 
+3) Analyzing: same value for everyone, encoded in base64
+4) Decoding -> serialized information
+5) unserialize -> Array( [d] => 0, [a] => 5, [c] => 10 )
+6) Play with values to expect change and understand behaviour ( change values, serialize, encode, introduce value in cookie "__utmz[a]")
+7) [d] is a debug flag, if set to 1 the session enters in debug mode. The other attributes do not seem to affect the session directly
+
+==========
+Hack #13
+==========
+What vulnerability did you find?
+OPEN redirection in /users/login because we have access to the redirection url
+How did you find and exploit this vulnerability?
+1) tried to understand the clue and reverse /users/logout by /users/login
+2) realize I get to another login inside my open session.
+3) Try SQL injections, and entering as admin or Oli
+4) Use Burp to analyze traffic and play with some form values (same step as 3 but with more values)
+5) realize the request are getting redirected 
+6) try to access a hidden part of the website and getting disconnected a lot and nothing conclusive
+7) looking into redirection exploits, finding of open redirections
+8) trying to inject links instead of the redirection link
+9) analyzing how exactly the redirection string works by analyzing %252F
+10) Realizing it is a double encoding of '/' -> %2F' -> '%252F' (which is ASCII encoding (first links gave me base64 which completely mislead me) (thx to w3schools for the encoding/decoding)
+11) Try changing all link with parts of encoded code %252Fgoogle.com
+12) Realizing it isn't working but probably close, reading more about open redirections, but nothing more relevant
+13) trying with /users/redir/%252Fgoogle.com still not
+14) Trying with a full address http://google.com but encoding ':' and '/' -> /users/redir/http%253A%252F%252Fgoogle.com
+15) Hack discovered !
+==========
+Hack #14
+==========
+What vulnerability did you find?
+Unauthorized API access
+How did you find and exploit this vulnerability?
+This is a really long journey, first I will list the hints and clues given on the website, Oli and an assistant.
+Website: Appathetic + What do most apps use to communicate with the main site?
+Oli: 
+1) Have you found the people using the API? If so, follow them
+2) If you get a number you might want a bigger number
+Assistant: Sometimes it's different (answer given to the discovery of { instances:[ ] } )
+
+Steps:
+1) Understand what the clues are about, Appathetic simply refers to an app that isn't very good, no help there. On the other hand, the second clue directly points towers API.
+2) Read a lot about API, REST API, cakePhP API, Ajax Endpoints,  ... -> find that the api entrance is /api/ which is forbidden
+3) The cakePhP doc says you can see what extension type is used by trying it out in the URL -> JSON worked.
+4) Trying if there are forgotten files in /api/* by using Burp Suite intruder, no real discoveries
+5) Analyzing the requests/responses when trying to get a .json and realizing the response tells us the Content-Type is application/json (thanks to my course of Foundation of Data Science I know that I have to add Accept: application/json in the request)
+6) "Boum": first interesting response from the api that isn't forbidden or a JSON message "Not Found"
+7) Trying out countless combinations to see if now that we have found what the api wants we can find hidden folders (/api/folders) again using first trial and error and afterward intruder => nothing
+8) Asking again about the Assistant hint ... and getting the same answer and that nothing else can be added, so I try to repeat my request to /api and nothing ... then I tried with intruder with an empty payload and 5000 requests. 
+Wow, we get something unexpected: the server seems to randomly at first, send not empty responses that look like hashes. I get about 35 of them, after realizing they are MD5 I try to decode them which gives me 35 numbers and it seems like they are numbers between 1-1000 and some of them tend to repeat.
+9) I did the same to see if the reaction of the server was the same and it wasn't I received totally different values and not the same amount.
+10) Trying to find if it is possible to time request to arrive at the server at a certain time, It can be done with a lot of network analysis and statistics ( cf DEFCON21 car auction presentation https://www.youtube.com/watch?v=sgz5dutPF8M) . Realized this isn't what those numbers mean.
+11) Trying to see if something happens by using them on the "Emergency page" and changing the time to the given value ... nothing
+12) Analyzing the behavior of the requests and trying them out. 
+a) The more you send requests, the more md5 you get
+b) They seem to be random 
+c) with 250 requests you can get only 1
+13) Trying to see if we get different responses from different API requests /api/* using intruder, we find that /api/index is accessible, after that I try /api/index/*. There a find again a ton of folders which give very similar responses  to what we received previously. But I realized the folders were also random and actually index simply redirected to /api/
+14) I tried to find other possible folders that seemed possible similar to instances and when trying /api/instance I received an empty array => Good path.
+15) After that I tried to follow one of the API models from cakePHP which is /api/@model/@Id -> /api/instance/md5(decoded and not decoded). Which didn't work. while I was trying all the different hashes I had collected during my research and none of them were working I lost track and decided to reset it by getting only one of them ( cf c) in 12) ). FINALLY /api/instance/unique_md5 sends a very interesting response: 
+{ device_id: md5 , key: md5, action: a_6} (I found out that the key was simply the hash of the id with md5)
+16) This already looks more like the normal api information. The action seems to refer to PHP forms functions but the id and key are still not clear to where they belong.
+17) So I try to forge POST requests by analyzing the headers of one of the POST request on the website and I try to reach for combinations of /api/[action/a_6/device_id/md5/key/key_md5]/[md5/key_md5] and putting the different values at the bottom of the POST request next to _method=POST. Here I found that /api/a_6/md5 gives me {403:error} which seems to show that I'm on the right track but something is either missing or not in the right place. I realize after a while that my POST request was missing the right Content-Type in the request (application/x-www-form-urlencoded) which finally leads me to another error: { "error":500,"message":"Invalid function call" }
+18) So after making sure I haven't missed any of the combinations (cf 17) and a lot of research on that error, I go back to my list of clues and see if I have used them all ... All but the 2nd one from Oli. My first thought is to create a script that takes the decoded  value of the md5 and then enters a loop that encodes in md5 the next values, but I realize we're not supposed to code so I leave this idea for now. The I try to change the value of a_6 to the decoded value of the device_id, nothing. After all, I decide to use intruder and give a list from 1 to 10000 for the a_6 to see if this is the place where we're supposed to increase the number. 
+19) Finally with the post request with the /api/a_16/device_id_md5 I get a response { accounts: null } and the hack 14 unlocks.
+==========
+Hack #15
+==========
+What vulnerability did you find?
+Access to a swap file left behind from what we can assume was a powercut or another event, giving access to the config file for the database.
+How did you find and exploit this vulnerability?
+Clues: Vim + Horn of plenty (overflow)
+1) First check all the possible meanings of vim other than the obvious text editor, none really interesting.
+2) Look for all the frameworks used for this website if the versions used have overflow vulnerabilities cited by CVE, I realized after a long time of research and almost pen testing that we are not allowed to do so for this coursework.
+3) Trying to find a connection between vim and overflow but no luck there.
+4) Trying to see why vim could be relevant in the exercise, (I have made this part shorter but this was the 2nd longest research for this hack). 
+a) VIM: information leakage, exploits, problems, vulnerabilities (this was the website which build the path for the next steps: http://security.stackexchange.com/questions/65883/what-sensitive-information-can-be-leaked-in-a-vims-swap-file )
+b) After a while, I create a scenario with what overflow could mean => too much information so we back it up and clean up the place. This leads me to look for backups and the file that organizes backups -> I immediately find files like settings.php, configuration.php and config.php. The last one gives me an empty page.
+5) So we found an empty page for the config.php for the backups and we found out about the swap files. (Long before finding about the swap files I tried all the backup extensions possible for the config file). 
+6) The vim doc is really clear "file.ext.swp" or ".file.ext.swp" (the second one was found looking into the recovery manual )
+7) So finally /.config.php.swp downloads the swap file, which I convert back with vim -r filename
+8) We get a Database config file with what seems to be the root user. 
+9 We connect to the database using the credentials found and with the program Workbench SQL after a couple of other options failed.
+10) We enter the database, find an odd user test with an odd extension. 
+11) I access the URL and realize the password doesn't work as expected because it is hashed. 
+12) I reverse the hash (sha1) thanks to an amazing database of hashes.
+13) using the credentials test and the password found I enter the superadmin section.
+

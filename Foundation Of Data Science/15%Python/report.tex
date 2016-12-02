@@ -1,0 +1,129 @@
+\documentclass[8pt]{article}
+\usepackage{geometry}
+\geometry{a4paper}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{csquotes}
+\linespread{1.2}
+\graphicspath{{Pictures/}}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\center
+\textsc{\LARGE University of Southampton}\\[1.5cm]
+\textsc{\Large Msc Cyber Security}\\[0.5cm]
+\textsc{\large Foundation of Data Science}\\[0.5cm]
+\HRule \\[0.4cm]
+{ \huge \bfseries Data Storage}\\[0.4cm]
+\HRule \\[1.5cm]
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+Gerard \textsc{Tio Nogueras}
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisor:} \\
+Dr. Huw \textsc{Fryer}
+\end{flushright}
+\end{minipage}\\[4cm]
+
+{\large \today}\\[3cm]
+%\includegraphics{Logo}\\[1cm] % Include a department/university logo - this will require the graphicx package
+
+\vfill
+\end{titlepage}
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+Write a document of up to 2 pages describing the manner in which you would store the data you downloaded in question 1, for use in a Data Science application, and make mention of the following:
+\begin{enumerate}
+\item The difference between a relational database and a NoSQL database 20\%
+\item The costs and benefits of using different forms of storage, both in general, and with the particular data here. 20\%
+\item Conclude which method you would use for the data described in questions 1 and 2, and justify your choice 30\%.
+\item Presentation, grammar, and good academic practice 20\%
+\end{enumerate}
+This report is longer then asked but I opted for space and clarity against density. I assessed that what I have produced is equivalent to what was asked in number of pages.
+%----------------------------------------------------------------------------------------
+%	CONTENT
+%----------------------------------------------------------------------------------------
+
+\section{Content}
+The choice of the type of storage is not a easy option, multiple arguments have to be taken in account. Here we will discuss them and conclude the best solution for our data.
+\subsection{General arguments}
+Main differences between SQL and NoSQL summarized:
+\begin{itemize}
+\item Data storage models: Relational models(SQL) where we have the entries as rows and the data points as columns.   NoSQL have multiple options as documents, graphs, key-value and columnar.\cite{McNulty-Holmes:2014}
+\item Normalization(SQL) vs Denormalization(NoSQL): Normalisation helps avoiding replication in the data by separating tables properly and connecting them by ids. For NoSQL Databases we could apply normalization aswell but the CRUD syntax will work better with duplicated data.\cite{Buckler:2015}
+\item Relational JOIN vs NoSQL: JOIN is one of the powerfull clauses for SQL databases which allows to combine multiple tables. NoSQL doesn't have the equivalent this is why denormalization is preferred.\cite{Buckler:2015}
+\item CRUD(Create, Read, Update \& Delete) syntax: Because of its model SQL is very lightweight with great capacities. For NoSQL, simple operations work very well but since information can be nested into deep levels, complexity can rise faster for more complicated queries.\cite{Buckler:2015}
+\item Data integrity: SQL databases are able to enforce constraints on any CRUD action, for example make sure some ids match or items can not be removed if a certain id is still present. Unfortunately NoSQL can not enforce any rules concerning integrity, all data is accepted.\cite{Buckler:2015}
+\item Tables vs Documents/Data: Tables are only build to accept expected data whereas Documents can easily adapt to unexpected data.\cite{Gentz:2016}
+\item Schemas vs schemaless: All the tables must be defined before starting the development of the program and changes can be hard to achieve. With Documents, there is no design, they are dynamic.\cite{Gentz:2016} \cite{Buckler:2015}
+\item Transactions(multiple simultaneous actions concerning the same data): SQL deals with those transactions as if they were a single one to ensure that either both succeed or both fail. NoSQL modifications are atomic wich is equivalent to SQL in this regard but may vary depending on the solution used. \cite{Buckler:2015} \cite{Gentz:2016}
+\item ACID(Atomicity, Consistency, Isolation, Durability): NoSQL will focus on on performance and scalability whereas SQL databases are mostly compliant with ACID.
+\item Scalability: Here we have vertical scaling(better hardware) for SQL and an horizontal scaling(more nodes) for NoSQL.\cite{Gentz:2016} \cite{Buckler:2015} \cite{McNulty-Holmes:2014}
+
+\subsubsection{Little conclusion to outline where these different types are perfect}
+To have a good idea on how to choose between both here are projects which one type or the other or perfectly designed for it.\\
+Projects where SQL is ideal:\\
+\begin{itemize}
+\item Strong logical connections between Data and stable structure
+\item Important necessity of ACID compliance.
+\item Moderate growth
+\end{itemize}
+Projects where NoSQL is ideal:\\
+\begin{itemize}
+\item Data on the fly, unspecific data changing rapidly
+\item High throughput to handle viral growth
+\item Scalability for fast growth + Fast development
+\item examples: IoT, Mobile(scaling), Real-Time Analytics(stocks market), content management.
+\end{itemize}
+\cite{MongoDB:2016} \cite{McNulty-Holmes:2014} \cite{Buckler:2015}
+
+\end{itemize}
+\subsection{Points of discussion applied to our data}
+First of all, many of the points cited in the argumentation before won't be of any use since there are many incognitos to what exactly this data is going to be used for and the possible structure of the whole database is unknown. Therefore we will have make a decision only based on what we have and maybe propose different answers depending on assumption for the use of the data.\\\\
+Our first data concerns authorities, establishments and the second one concerns health institutions.\\
+Let us analyse what would suite the data from the 1st question. Trying to apply the major factors to chose which type fits best: The type of data is pretty static, it won't scale since there a fixed number of those entities, there is an IdCode which can be used to link all the tables if needed after normalization. I think an SQL database would fit best for our first question. Because even if we think of the different possibilities 
+
+For the 2nd question we are facing dynamic data, the number of Address lines might differ from one to another. Then this is data which could probably be used for mobile applications and therefore scalability might be a factor to take into account. Some of the values are objects which fits a NoSQL database as wels as the other features mentioned. This is why a NoSQL database seems more fit for the type of data used in the 2nd question.
+%INFO
+%Type of data: {'authorities': [{'EstablishmentCount': 1762,   'LocalAuthorityId': 197,   'LocalAuthorityIdCode': '760',   'Name': 'Aberdeen City',   'SchemeType': 2,   'links': [{'href': 'http://api.ratings.food.gov.uk/authorities/197',     'rel': 'self'}]},  {'EstablishmentCount': 1925,   'LocalAuthorityId': 198,   'LocalAuthorityIdCode': '761',   'Name': 'Aberdeenshire',   'SchemeType': 2,   'links': [{'href': 'http://api.ratings.food.gov.uk/authorities/198',     'rel': 'self'}]},
+     
+%_____________________________________________
+
+%{'Region': 'south_east', 'Scores': None, 'BusinessTypeID': '7839', 'PostCode': 'SL1 4JA', 'NewRatingPending': 'False', 'RatingKey': 'fhrs_exempt_en-GB', 'LocalAuthorityCode': '885', 'RatingValue': None, 'LocalAuthorityName': 'Slough', 'Geocode': {'type': 'Point', 'coordinates': [-0.640635, 51.523987]}, '_id': ObjectId('581203484d1e0f0b0fa560cb'), 'LocalAuthorityBusinessID': '53224', 'Lat': 51.523987, 'AddressLine4': 'Slough', 'LocalAuthorityEmailAddress': 'foodandsafety@slough.gov.uk', 'AddressLine2': '909 Yeovil Road', 'Lng': -0.640635, 'RatingDate': datetime.datetime(2010, 3, 11, 0, 0), 'BusinessName': '24 Hour Ice', 'SchemeType': 'FHRS', 'LocalAuthorityWebSite': 'http://www.slough.gov.uk', 'BusinessType': 'Manufacturers/packers', 'FHRSID': '511991'}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+\newpage
+\begin{thebibliography}{99}
+\bibitem[Fryer, 2016]{Fryer:2016} Fryer, H. (2016) Data Management Available at \url{http://www.edshare.soton.ac.uk/17507/} (Accessed 18 November 2016)
+
+\bibitem[Wenzel, 2014]{Wenzel:2014} Wenzel, K. (2014) Database normalization explained in simple English. Available at: \url{http://www.essentialsql.com/get-ready-to-learn-sql-database-normalization-explained-in-simple-english/} (Accessed: 18 November 2016).
+
+\bibitem[McNulty-Holmes2014]{McNulty-Holmes:2014} McNulty-Holmes, E. (2014) :SQL vs. NoSQL- what you need to know. Available at: \url{http://dataconomy.com/sql-vs-nosql-need-know/} (Accessed: 18 November 2016).
+
+\bibitem[Buckler, 2015]{Buckler:2015} Buckler, C. (2015) SQL vs NoSQL: The differences. Available at: \url{https://www.sitepoint.com/sql-vs-nosql-differences/} (Accessed: 18 November 2016).
+
+\bibitem[Gentz, 2016]{Gentz:2016} Gentz, M. (2016) When to use NoSQL vs SQL. Available at: \url{https://docs.microsoft.com/en-gb/azure/documentdb/documentdb-nosql-vs-sql} (Accessed: 18 November 2016).
+
+\bibitem[MongoDB, 2016]{MongoDB:2016} MongoDB (2016) Giant ideas brought to life. Available at: \url{https://www.mongodb.com/use-cases} (Accessed: 18 November 2016).
+\end{thebibliography}
+\end{document}

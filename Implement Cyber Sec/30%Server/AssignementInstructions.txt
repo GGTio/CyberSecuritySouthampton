@@ -1,0 +1,91 @@
+==COMP6230 2016/17 Group assignment 2 specification==
+
+* Assignment 2 - "Group security assessment exercise"
+* Deadlines: 
+*: part 1 - before 1600 on Thursday 8 December 2016 (week 10)
+*: part 2 - before 1600 on Thursday 15 December 2016 (week 11)
+* Feedback: by Thursday 26 January 2017
+* Effort: 40 hours 
+* Weighting: 30% of module evaluation
+
+==Overall==
+
+For this assignment, you are provided with an insecure server, running on a virtual machine, which hosts Rob's website. The server is running a number of different typical services, many of which are vulnerable due to varying issues, from out-of-date software to improper configuration. Your task is to assess the system, identify the vulnerabilities, attempt to resolve them and produce a report detailing the risks and the required resolutions.
+
+You must ensure that the following original requirements of the server are maintained:
+
+* The ''Adventures of Rob'' website should continue to be available publicly
+* The root account and Wordpress admin account must keep the password 'unicorn'
+* It should be possible to manage the server using SSH
+* It should be possible to upload files to the website using Samba
+* It should be possible to manage the MySQL database remotely, over the web
+* It must still be possible for Wordpress to send out emails
+* A daily backup should be taken in case anything goes wrong
+
+This is a group assignment using the groups specified at [[COMP6230-1617-cw2groups|assignment 2 groups]]. 
+
+The assignment is designed to introduce you to the process of assessing an already-running service, identifying the vulnerabilities and resolving them. It will introduce you to the use of security penetration testing tools, recognise vulnerabilities, assess the impact of the vulnerabilities and put into place remedial measures to resolve them.
+
+==Download==
+The virtual machine can be downloaded from the following location:
+
+* [https://dropoff.soton.ac.uk/pickup.php?claimID=GrTHVfKG44CQgCmn&claimPasscode=cJdo6Uas63ukurWo&emailAddr=ofb%40ecs.soton.ac.uk Mirror 1]
+* [https://secure.ecs.soton.ac.uk/notes/comp6230/1617/ofb/Robserv.ova Mirror 2]
+
+==Scenario== 
+
+You will be provided with a virtual machine image and access credentials. You must first download the virtual machine image (see above) and import it into Virtual Box, which is available on all ECS machines or downloadable for free from [http://virtualbox.org/ Virtualbox.org]. Once the machine has been imported and started, you will be able to log in to access the server, from which you can begin your exploration of the machine, its services and its vulnerabilities using the tools and techniques covered in the module.
+
+The assignment has two parts, each with its own deadline (see later).
+
+You will be expected to produce a report, based on [[COMP6230-1617-cw2report|this template]], which specifies: 
+* The initial configuration of the system and the vulnerabilities found, including an assessment of the severity. 
+* The securing of the system, explaining what actions were taken to resolve each vulnerability. You should also explain how the securing of the vulnerability was verified and mention any further steps that could be taken to ensure continued security together with any additional recommendations.
+
+You will then submit your modified virtual machine incorporating the changes you have made (this is the deliverable for Part 1).
+
+You will be provided with a second server (virtual machine) and asked to perform a reassessment and evaluation to determine whether you are able to identify any remaining vulnerabilities in that system. 
+
+*You will then include this reassessment in your group report, comparing it to the initial assessment undertaken at the start of your report.
+
+The submission of this report is the deliverable for Part 2.
+
+==Submission==
+
+=== Part 1 ===
+Each group will submit their fixed Virtual Machine and the draft of their security report of the system (covering the initial security assessment the remedial actions taken and other recommendations). There should be only one submission per group (usually the first name in the groups listing, but this can be altered by agreement of the group).
+
+It is not possible to submit the Virtual Machine to the ECS Handin server - the following procedure should be followed:
+
+Export your Virtual Machine as a "Virtual Box Appliance file", then go to the [https://dropoff.soton.ac.uk/ Southampton Dropoff service]  and send this file to O.Bills@soton.ac.uk. You will be given a Claim ID and Claim Passcode after submitting.
+
+Please submit this claim ID and Claim Passcode in a text file (vm.txt), along with a copy of your draft report at this point (draft_report.txt) to the [https://handin.ecs.soton.ac.uk/handin/1617/COMP6230/2/ ECS Handin server] before the deadline for Part 1. Note that both of the files submitted must be text files, not Word, PDF or any other format. The draft_report will '''not''' be marked, only the final report submitted in Part 2 will be assessed.
+
+
+=== Part 2 ===
+Each group will submit their final report, including their assessment of the second server (VM).
+Marks will be awarded for the vulnerabilities identified, the assessment of the vulnerabilities in both servers, the recommendations made and the remedial action taken.
+
+Please submit your final report at this point (report.txt) to the [https://handin.ecs.soton.ac.uk/handin/1617/COMP6230/3/ ECS Handin server] before the deadline for Part 2. Note that your final report must be a text file, not Word, PDF or any other format.
+
+There should be only one submission per group (usually the first name in the groups listing, but this can be altered by agreement of the group).
+
+==Assessment==
+
+The assessment will be based on the following approximate breakdown:
+
+  Assessment: 30%
+  Remedial action: 30%
+  Reassessment (Part 2): 30%
+  Report: 10%
+
+All group memebers are expected to contribute equally to this assessment and (on this basis) the mark awarded to the group will be credited to each of the members. Should the group consider that one or more members are not contributing equally, they should notify EJZ by email as soon as possible. All such cases will be considered and, if appropriate, an ad hoc arrangement will be adopted.
+
+==Penalties==
+* Any late submissions will attract the usual University penalty of 10% per working day. Should both submissions be late, the 'days late' used will be the sum of '''both''' late submissions.
+
+* The target size of the final report.txt file is 2000 words (this includes the report template supplied). All files will be truncated to 3000 words before being marked, so groups should be aware that any text above this limit will not be assessed.
+
+* Please note the [http://www.calendar.soton.ac.uk/sectionIV/academic-integrity-regs.html Regulations Governing Academic Integrity] and [https://secure.ecs.soton.ac.uk/notes/comp3201/1516/ejz/Academic_Integrity_Guidance.pdf Academic Integrity Guidance] when undertaking this assignment and making your submission. You will be required as part of the ECS Handin process to confirm that the work submitted is entirely the work of your group. Any breach of academic integrity is subject to the penalties set out in the University regulations.
+
+EJZ

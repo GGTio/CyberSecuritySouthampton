@@ -1,0 +1,67 @@
+Coras Process:
+Identify context:
+	3) Refining the target description using asset diagrams
+		Target/assets:
+			Direct
+			- physical documents
+			- scanned documents
+			Indirect
+			-Trust
+			- money
+			identity
+			info
+		Parties:
+			- House
+			- Criminal
+		High level Risk analysis
+			Who/Cause:
+				- Trusted neighbour
+				- daughter
+				- criminal/thief
+				- window
+				- door
+			Incidents/attacks:
+				attacks
+				- daughter gets social engineered
+				- social engineering on the neighbour
+				- crack of the credentials of the computer
+				- break in the house by () forcing the door/windows
+				- neighbour betrays us (not sure cause trusted)
+				
+				incidents
+				- leave pc open
+				- unlocked documents				
+				- leave open door/window
+				- neighbour loses his key
+				- daughter loses the key
+				- daughter could actually be an asshole
+				- give the key to a trusted thrid party
+				- natural disaster
+			
+
+			Vulnerabilities:
+				- The trust in people (neighbour and daughter)
+				- Human error
+				- open window/door
+				- no pets/alarm
+				- no authentication for the computer
+				- on a usb/unecrypted hdd
+		ASSET DIAGRAM cf coras diagram
+	4) Define likelihood (discuss with the person your working with)
+		Certain  
+		Likely
+		Possible
+		Unlikely
+		Rare
+		
+		Define Cosneq scale
+
+		Risk evaluation
+
+	5) Threat diagram
+	6)
+	7)
+	8) Treatment
+
+
+

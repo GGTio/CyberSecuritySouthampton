@@ -1,0 +1,175 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Simple Sectioned Essay Template
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing essay content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt]{article} % Default font size is 12pt, it can be changed here
+
+\usepackage{geometry} % Required to change the page size to A4
+\geometry{a4paper} % Set the page size to be A4 as opposed to the default US Letter
+
+\usepackage{graphicx} % Required for including pictures
+
+\usepackage{float} % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
+\usepackage{wrapfig} % Allows in-line images such as the example fish picture
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\linespread{1.2} % Line spacing
+
+%\setlength\parindent{0pt} % Uncomment to remove all indentation from paragraphs
+
+\graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+
+\textsc{\LARGE University of Southampton}\\[1.5cm] % Name of your university/college
+\textsc{\Large Msc Cyber Security}\\[0.5cm] % Major heading such as course name
+\textsc{\large Foundation of Cyber Security}\\[0.5cm] % Minor heading such as course title
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Privacy Laws}\\[0.4cm] % Title of your document
+\HRule \\[1.5cm]
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+Gerard \textsc{Tio Nogueras} % Your name
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisor:} \\
+Pr. Vladimiro \textsc{Sassone} % Supervisor's Name
+\end{flushright}
+\end{minipage}\\[4cm]
+
+{\large \today}\\[3cm] % Date, change the \today to a set date if you want to be precise
+
+%\includegraphics{Logo}\\[1cm] % Include a department/university logo - this will require the graphicx package
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\tableofcontents % Include a table of contents
+
+%\newpage % Begins the essay on a new page instead of on the same page as the table of contents 
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\section{Introduction} % Major section
+So we have two questions to discuss, the first one\\\\Simply put, it is not possible to de-identify individual personal data unless you are talking about a single, low resolution measurement in total isolation. For example, you might be able to de-identify a single blood pressure reading like 138/75 and add it to an aggregate with a low-resolution timestamp but it is not possible to de-identify more than that in our hyper-connected world that never forgets anything.\\\\
+\textbf{Critically discuss the above statement by assessing what the implications of such a statement would be for law-makers wanting to better delineate the domain of data protection laws.}\\\\
+And the second\\\\
+WP29: A specific  pitfall  is  to consider pseudonymised  data  to  be  equivalent to anonymised  data.\\ICO:  Pseudonymisation is a way to produce anonymised data but on an individual-level basis\\\\
+\textbf{Are these statements inconsistent? Critically discuss with references to both documents. }
+
+
+
+\section{Content}
+\subsection{1st Part}
+
+%------------------------------------------------
+
+\subsubsection{Understanding the statements} % Sub-section
+
+Analyse each part of the statement for better comprehension, then group them all together for a global comprehension of the statement. Afterwards explain the example and create one to assure understanding of the statement.
+
+%------------------------------------------------
+
+\subsubsection{Implications of these statements} % section
+
+Explain thoroughly how this statement is important for privacy laws, who is it going to affect, what exactly are the implications. A lot of referencing to the papers + try to find current open questions/cases to add understanding.  
+
+%------------------------------------------------
+
+\subsubsection{Discussion of these implications} % Sub-sub-section
+
+Discuss and argue about the subject, not too personal, use logic and papers information here.
+
+\subsubsection{Personal}
+
+Bring personal thoughts enforced by papers, give ideas as solutions, everything not brought up earlier can come here.
+
+
+%------------------------------------------------
+
+\subsection{2nd Part} % Major section
+
+%------------------------------------------------
+
+\subsubsection{Understanding the statements}
+
+State who the WP are and why they don't believe pseudo =/= anonymous.
+
+State who the UK ICO is and their arguments on pseudo == anonymous at an individual-level basis.
+
+What do they mean by individual-level basis, give example
+
+\subsubsection{Implications of these statements}
+explain in depth both citations using papers arguments and using example and own words
+
+\subsubsection{Discussion of these implications}
+
+\subsubsection{Personal}
+
+
+
+%----------------------------------------------------------------------------------------
+%	CONCLUSION
+%----------------------------------------------------------------------------------------
+
+\section{Conclusion} % Major section
+
+Here sum up all the discussion, and give final opinion.
+
+Example citation \cite{Figueredo:2009dg}.
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
+
+\bibitem[Figueredo and Wolf, 2009]{Figueredo:2009dg}
+Figueredo, A.~J. and Wolf, P. S.~A. (2009).
+\newblock Assortative pairing and life history strategy - a cross-cultural
+  study.
+\newblock {\em Human Nature}, 20:317--330.
+ 
+\end{thebibliography}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

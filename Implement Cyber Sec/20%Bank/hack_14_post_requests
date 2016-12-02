@@ -1,0 +1,42 @@
+he said if you get a number you might want a bigger number
+
+Have you found the people using the API? If so, follow them
+
+Sometimes it's different
+
+it's actually simple - just find it, talk to it in the right way, learn what you can, and put it to use - job's a gooden.
+
+POST /api/a_6/f8c1f23d6a8d8d7904fc0ea8e066b3bb/1 HTTP/1.1
+Host: robthebank.soton.ac.uk
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+Content-Type: application/x-www-form-urlencoded
+Accept:application/json
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4,ca;q=0.2
+Referer: http://robthebank.soton.ac.uk/api/a_6
+charset:UTF-8
+Cookie: CAKEPHP=cp5ma6kt9egk497p9h4ei094l5
+Connection: close
+Content-Length: 49
+
+_method=POST&key=a42886388c0417c17dd24f9f2dbd6e03
+
+
+__________________________________
+
+POST /api/a_16/f8c1f23d6a8d8d7904fc0ea8e066b3bb HTTP/1.1
+Host: robthebank.soton.ac.uk
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+Content-Type: application/x-www-form-urlencoded
+Accept:application/json
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4,ca;q=0.2
+Referer: http://robthebank.soton.ac.uk/api/a_6
+charset:UTF-8
+Cookie: CAKEPHP=cp5ma6kt9egk497p9h4ei094l5
+Connection: close
+Content-Length: 49
+
+_method=POST&key=a42886388c0417c17dd24f9f2dbd6e03
