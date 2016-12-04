@@ -8,18 +8,18 @@ Times of catches for a fisherman
 ## Steps
 
 ### First 
-- plot the distribution of X (times[hour,%ofHour]) and Y (sizes[Kg])
+- plot the distribution of X (times[hour,%Hour]) and Y (weight[Kg])
 - characterize and discribe:
 	- median
 	- mean values
 	- variance
-	- ... (check lecture for all the relevant data to include)
+	- ... (check lectures for all the relevant data to include)
 - Considering the sample coming from a larger population:
 	- give mean values with 95% confidence intervals for both distributions
 
 ### Second
-- analyze the dependence of time of catch and size of catch:
-	- plot that shows he dependende of X and Y and discuss
+- analyze the dependence of time of catch and weight of catch:
+	- plot that shows he dependence of X and Y and discuss
 	- characterise the relationship using statistical measures 
 	- analyse the amount of information about Y given by knowing X
 	- which interval has the lowest average rate of catching and which has the highest average
