@@ -16,7 +16,7 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[12pt]{article} % Default font size is 12pt, it can be changed here
+\documentclass[12pt,twocolumn]{article} % Default font size is 12pt, it can be changed here
 
 \usepackage{geometry} % Required to change the page size to A4
 \geometry{a4paper} % Set the page size to be A4 as opposed to the default US Letter
@@ -77,5 +77,59 @@ Dr. Markus \textsc{Brede}
 
 \vfill % Fill the rest of the page with whitespace
 \end{titlepage}
+\newpage
+\section{First step}
+We start by plotting the distribution of the times of catch and the distribution of the weights of the fishes caught.
+Let us look at the information we can retrieve from these distributions following the lectures recommendations. One of them  is to find the good bin sizes using the Freedman-Diaconis rule which gives us 2.8h for the times and 0.61kg for the weights.
+\subsection{Typical Scores}
+We start with the mean, the median, the mode and finally the geometrical mean.
+\textbf{Times}
+\begin{itemize}
+\item mean 9.388
+\item median 8.950
+\item mode 1.65
+\item geometrical mean 6.786465 
+\end{itemize}
+\textbf{Weights}
+\begin{itemize}
+\item mean 1.8431
+\item median 1.8250
+\item mode 3.22
+\item geometrical mean 1.36948
+\end{itemize}
+\subsection{Range of Scores}
+Here we will look at the range of the distributions, their spread and how they spread.
+\textbf{Times}
+\begin{itemize}
+\item minimum 0.010
+\item maximum 23.160
+\item variance 31.99831
+\item standard deviation 5.656705
+\item interquartile range 8.335
+\item skewness 0.2477339
+\begin{enumerate}
+\item old
+\item new
+\end{enumerate}
+\item kurtosis -0.8870124
+\end{itemize}
+\textbf{Weights}
+\begin{itemize}
+\item minimum 0.0100
+\item maximum 4.2300
+\item variance 1.162248
+\item standard deviation 1.078076
+\item interquartile range 1.8
+\item skewness 0.08966
+\begin{enumerate}
+\item old
+\item new
+\end{enumerate}
+\item kurtosis -1.169334
+\end{itemize}
+\subsection{Kernel density estimation}
+Here we plot a continuous estimation of the PDF (probability density function) for our variables. This allows for a smoother estimate of the distribution then the histogram. Normally this is used to extrapolate the PDF for a larger population.
+Strangely for the weights distribution the sum of the KDE values exceeds 1 by far which seems a bit odd since it is supposed to estimate a PDF. On the other hand the "times" KDE seems perfectly normal
+\section{Second step}
 
 \end{document}

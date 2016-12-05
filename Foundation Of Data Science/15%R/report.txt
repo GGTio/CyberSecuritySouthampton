@@ -11,6 +11,8 @@ typical scores
   - mode
   - geometrical mean
 range of scores
+  - min
+  - max
   - mean absolute deviation
   - variation (linearly from the mean) can help us compare distributions
   - standard deviation

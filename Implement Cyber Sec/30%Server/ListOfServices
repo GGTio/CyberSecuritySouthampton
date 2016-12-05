@@ -1,0 +1,126 @@
+#list of services to check
+
+## Legend
+
+N - normal
+U - unusual
+V - vulnerable
+W - not sure
+
+##Start up
+| Status | Program | Description|
+|--------|---------|------------|
+| N | acpid | Advanced Configuration and Power Interface event daemon |
+| N | atd | atd is that which deals with commands to be executed a single time, but at a specific moment in the future. Can be hardened with /etc/at.allow and /etc/at.deny |
+| W | backup-server | |
+| N | dbus | simple interprocess messaging system |
+| V | lwresd | daemon providing name lookup services to clients that use the BIND 9 |
+| N | mcstrans | SELinux core policy utilities |
+| N | motd | Dynamic message of the day |
+| N | mysql | SQL server |
+| W | openbsd-inetd | Internet Superserver |
+| V | postgresql | SQL DB unused in the server |
+| N | restorecond |daemon that watches for file creation and then sets the default SELinux file context |
+| V | samba | Simple Samba file sharing server |
+| N | smartmontools | control and monitor storage systems using S.M.A.R.T.(Self-Monitoring, Analysis and Reporting Technology System) |
+| N | spamassassin | Open Source anti-spam platform giving system administrators a filter to classify email and block spam NOT VULN because version 3.3.2 |
+| V | ssh | secure shell |
+sudo
+apache2
+bootlogs
+N cron cron is the daemon responsible for executing scheduled and recurring commands can be secured by defining a /etc/cron.allow or a /etc/cron.deny
+exim4
+rsync
+windbind
+dovecot
+rc.local
+rmnologin
+
+##Other possible programs in /etc/init.d
+
+checkfs
+checkroo-booclean
+checkroot
+console-setup
+halt
+hostname
+hwclock
+kbd
+keyboard-setup
+killprocs
+kmod
+mountall-bootclean
+mountall
+mountdevsubds
+mountkernfs
+mountnfs-bootclean
+mountnfs
+mtab
+networking
+procps
+rc
+rcS
+reboot
+sendsigs
+single
+skeleton
+smartd
+ssh-alt
+udev
+udev-mtab
+umountfs
+umountnfs
+umountroot
+urandom
+x11-common
+
+##CRON daily
+
+apache2
+aptitude
+dpkg
+logrotate
+mlocate
+samba
+apt
+bsdmainutils
+exim4-base
+man-db
+passwd
+spamassassin
+
+##CRON weekly
+
+man-db
+
+## Big hardenings
+
+### SSH
+https://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html
+https://www.cyberciti.biz/faq/tcp-wrappers-hosts-allow-deny-tutorial/
+https://en.wikipedia.org/wiki/Port_knocking
+https://www.cyberciti.biz/tips/ssh-public-key-based-authentication-how-to.html
+https://www.cyberciti.biz/faq/ssh-password-less-login-with-dsa-publickey-authentication/
+https://www.cyberciti.biz/faq/ssh-passwordless-login-with-keychain-for-scripts/
+
+Added (done) at the if already applied in the file from beginning
+
+a)/root/.ssh/authorized_keys -> AAAA... (id_rsa.pub)
+Not sure if the MII... (id_rsa) is usefull
+b) no /host.allow or /host.deny
+c) check for port 22 netstat -pln
+d) SSH Protocol 2 -> /etc/ssh/sshd_config (done)
+e) add these lines in /etc/ssh/sshd_config to kick inactive users:
+ClientAliveInterval 300
+ClientAliveCountMax 0
+f) IgnoreRhosts yes in /etc/ssh/sshd_config (done)
+g) HostbasedAuthentication no in /etc/ssh/sshd_config (done)
+h) Firewall (not sure for our case)
+i) RECOMMENDATION: use stronger passwords
+j) RECOMMENDATION: Use public/private key pairs for authentication instead of passwords-> https://askubuntu.com/questions/2271/how-to-harden-an-ssh-server
+k) USING a counter to bruteforce attacks (#16)
+l) TCP wrappers
+m) #20 not sure if deprecated
+
+### SUDO
+
