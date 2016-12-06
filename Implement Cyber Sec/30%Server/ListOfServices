@@ -6,6 +6,7 @@ N - normal
 U - unusual
 V - vulnerable
 W - not sure
+P - patched
 
 ##Start up
 | Status | Program | Description|
@@ -14,7 +15,7 @@ W - not sure
 | N | atd | atd is that which deals with commands to be executed a single time, but at a specific moment in the future. Can be hardened with /etc/at.allow and /etc/at.deny |
 | W | backup-server | |
 | N | dbus | simple interprocess messaging system |
-| V | lwresd | daemon providing name lookup services to clients that use the BIND 9 |
+| P | lwresd | daemon providing name lookup services to clients that use the BIND 9. PATCHED with |
 | N | mcstrans | SELinux core policy utilities |
 | N | motd | Dynamic message of the day |
 | N | mysql | SQL server |
@@ -91,3 +92,8 @@ m) #20 not sure if deprecated
 -> this fixes the use of sudo by all users
 
 ### Apache2
+
+cf trello
+
+
+- apache hardening

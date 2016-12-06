@@ -136,4 +136,5 @@ boxplot(mydata$V2,horizontal = TRUE,add = TRUE, axes = FALSE, at=2.5)
 
 #boxplots of (x,y)
 n = cut(mydata$V1,24)
-plot(n,mydata$V2)
+plot(n,mydata$V2,xaxt="n")
+axis(1,seq(0,24,1))
