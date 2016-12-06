@@ -25,69 +25,32 @@ W - not sure
 | N | smartmontools | control and monitor storage systems using S.M.A.R.T.(Self-Monitoring, Analysis and Reporting Technology System) |
 | N | spamassassin | Open Source anti-spam platform giving system administrators a filter to classify email and block spam NOT VULN because version 3.3.2 |
 | V | ssh | secure shell |
-sudo
-apache2
-bootlogs
-N cron cron is the daemon responsible for executing scheduled and recurring commands can be secured by defining a /etc/cron.allow or a /etc/cron.deny
-exim4
-rsync
-windbind
-dovecot
-rc.local
-rmnologin
+| V | sudo | special access command |
+| V | apache2 | server |
+| N | bootlogs | 	daemon to log boot messages |
+| N | cron | daemon responsible for executing scheduled and recurring commands can be secured by defining a /etc/cron.allow or a /etc/cron.deny |
+| N | exim4 | mail transport agent |
+| W | rsync | a fast, versatile, remote (and local) file-copying tool |
+| N | windbind | winbind is a component of the Samba suite of programs that solves the unified logon problem. |
+| N | dovecot | Dovecot is an open-source IMAP and POP3 server for Linux/UNIX-like systems |
+| N | rc.local | use by the system administrator. It is traditionally executed after all the normal system services are started |
+| N | rmnologin | The rmnologin service is responsible for changing the state of your system from a non-logon-capable system (set by the bootmisc service) to a logon-capable one. This is needed to ensure no-one can log on to your system while important services are being loaded. |
 
-##Other possible programs in /etc/init.d
-
-checkfs
-checkroo-booclean
-checkroot
-console-setup
-halt
-hostname
-hwclock
-kbd
-keyboard-setup
-killprocs
-kmod
-mountall-bootclean
-mountall
-mountdevsubds
-mountkernfs
-mountnfs-bootclean
-mountnfs
-mtab
-networking
-procps
-rc
-rcS
-reboot
-sendsigs
-single
-skeleton
-smartd
-ssh-alt
-udev
-udev-mtab
-umountfs
-umountnfs
-umountroot
-urandom
-x11-common
 
 ##CRON daily
 
-apache2
-aptitude
-dpkg
-logrotate
-mlocate
-samba
-apt
-bsdmainutils
-exim4-base
-man-db
-passwd
-spamassassin
+apache2 | cleans the cache
+aptitude | backup for the packages states (/var/lib/aptitude/pkgstates)
+dpkg | backup /var/lib/dpkg/status
+logrotate | logs /etc/logrotate.conf
+mlocate | updatedb 
+samba | backup of smbpasswd file
+apt | big backup
+bsdmainutils | daily calendar maintenance script
+exim4-base | 
+man-db | clears cache
+passwd | backup of the passwd, group shadow gshadow files
+spamassassin | spamassassin updates
 
 ##CRON weekly
 
@@ -124,3 +87,7 @@ m) #20 not sure if deprecated
 
 ### SUDO
 
+1) changed the line that granted sudo to all user to a comment
+-> this fixes the use of sudo by all users
+
+### Apache2
