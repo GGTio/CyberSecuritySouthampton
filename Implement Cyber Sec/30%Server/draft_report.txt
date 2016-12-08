@@ -1,0 +1,108 @@
+Group 1
+========
+gtn1n16         Gerard Tio Nogueras
+jc4n15          Junjie Chen
+rm2n15          Rattasapa Meeprapai
+
+
+Executive Summary
+Briefly headline the major vulnerabilities found, conclusions made, and remedial action taken.
+
+
+EXAMPLE:
+Vulnerability Assessment
+Open HTTP proxy on port 8080
+Details: An open instance of Squid Proxy Server (/usr/bin/squid) was found on port 8080, configured with a default configuration allowing any internet user to use the server as an open proxy.
+Classification: CWE-16 (Configuration)
+Exploitability: 5 - Any remote internet user can connect and proxy through the server
+Severity: 3 - Internet users can conceal their IP address when performing abuse, bouncing through the server instead, potentially breaking laws or terms of use and putting undue load on the server.
+Overall risk: 5*3 = 15
+Remedial Action
+Open HTTP proxy on port 8080
+Action: Squid Proxy Server was disabled and removed
+Justification: The service did not appear to have any legitimate use and was not part of the requirements and appears to have been enabled by accident, with a default configuration.
+Resolved: Yes
+
+
+Yeah for the draft we don’t need all that, just leaving it here for when we’ll do the full report :)
+
+
+
+
+
+
+Vulnerability Assessment
+You should include a numbered list of every vulnerability found, giving a description of the vulnerability.
+Also specify the severity, location, service, type of vulnerability and overall risk
+
+
+- General Security vuln because of out of date softwares(sudo, vim, postgres, tzdata, curl,Debian DLA-700-1, DLA-702-1, DLA-709-1, DLA-711-1 and DLA-718-1, libxslt ?
+- Bad SSH configuration (/etc/ssh/sshd_config)
+- Bad SSL Configuration 
+- Bad Apache Configuration
+- Outdated version and misconfiguration on phpmyadmin
+- Exposed files on the website
+- Information leakage on the website
+- Bad backup configuration (sql.bak)
+- Malicious Script in Wordpress upload folder(jj.php)
+- Malicious reroute on sendmail
+- Insecure mail transfer protocol
+- No spam / antivirus / greylist for mail service
+- Bad email service configuration
+- Missing Firewall
+- Incorrect Datetime
+- Basic System Logging not working properly
+- Apache logging poorly configured
+- Backdoor on port 45454
+- Backdoor on port 5000
+- Cache Poisoning due to multiple vendor DNS Query ID Field Prediction 
+- 2 versions on python (2.6 being vulnerable)
+- Bad Root Authentication Configuration (/etc/pam.d/auth)
+- Https Not enforced
+- Bad Wordpress configuration
+- Out of Date Wordpress
+- Bad Sudoers configuration which gives sudo to all users (/etc/sudoers, visudo)
+- Bad Root Authentication Configuration (/etc/pam.d/auth)
+- Bad Datetime
+- Not the right Message of the day from Rob to the possible future intruders (/etc/motd)
+- Disabled SELinux (/etc/selinux/config)
+- DNS server cache snooping remote information disclosure
+- Useless X window packages (x11-*)
+- Useless, almost empty second sql program (postgresql)
+- Useless LDAP (sldap) server
+- Unencrypted Telnet server found
+- Exposed duplicate private key id_rsa
+- Logging is disabled for wtmp (user login events)
+- Insecure samba server allows anonymous login
+- Unix password sync on samba exposures vulnerabilities
+- Samba web administration tool information leakage
+- NFS export share information disclosure  (needs mod)
+- Not needed NIS server exposures vulnerabilities
+- Wrong Permissions /home
+- Bad permissions for sensitive files (etc/passwd|group|shadow)
+- Cron executable giving wrong permissions to /var/www (/root/.fix-perms)
+- Unnecessary users and groups
+- Useless exposed open ports 
+- No certificate for Web Server
+- Information Leakage (/etc/issue)
+- Empty Passwords (/etc/passwd)
+
+
+
+
+Remedial Action
+For each identified numbered vulnerability, you should describe the remedial action taken to correct/resolve the vulnerability.       
+Also specify whether it was resolved
+
+
+
+
+
+
+Further Recommendations
+For any vulnerabilities or issues which have not been resolved, please specify any further recommendations here.
+If there are any further actions to take for the future, also specify them here.
+
+
+
+

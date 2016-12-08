@@ -1,0 +1,16 @@
+Your Names and Group 
+
+Executive Summary
+Briefly headline the major vulnerabilities found, conclusions made, and remedial action taken.
+
+Vulnerability Assessment
+You should include a numbered list of every vulnerability found, giving a description of the vulnerability.
+Also specify the severity, location, service, type of vulnerability and overall risk
+
+Remedial Action
+For each identified numbered vulnerability, you should describe the remedial action taken to correct/resolve the vulnerability.       
+Also specify whether it was resolved 
+
+Further Recommendations
+For any vulnerabilities or issues which have not been resolved, please specify any further recommendations here. 
+If there are any further actions to take for the future, also specify them here.
