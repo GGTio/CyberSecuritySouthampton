@@ -184,7 +184,11 @@ final = rbind(n1,n2)
 
 
 n = cut(mydata$V1,breaks = 0:24)
-plot(n,mydata$V2,xaxt="n",col=4,main="Correlation between Time of catch and weight")
+plot(n,mydata$V2,xaxt="n",col=4,main="Correlation between Time of catch and weight",labels(TRUE))
 axis(1,seq(0,24,1))
-getwd()
 
+plot(n,xaxt="n",main="Number of catches per hour")
+axis(1,seq(0,24,1))
+
+hist(mydata$V1,breaks = 24,labels = TRUE,main="Number of catches per hour",xaxt="n",ylab = "Counts",xlab = "Daytime")
+axis(1,seq(0,24,1))

@@ -1,16 +1,273 @@
-Your Names and Group 
+Group 1
+========
+gtn1n16 Gerard Tio Nogueras
+jc4n15 Junjie Chen
+rm2n15 Rattasapa Meeprapai
 
-Executive Summary
-Briefly headline the major vulnerabilities found, conclusions made, and remedial action taken.
 
-Vulnerability Assessment
-You should include a numbered list of every vulnerability found, giving a description of the vulnerability.
-Also specify the severity, location, service, type of vulnerability and overall risk
+[Executive Summary]
+The work is divided in the suppression of unnecessary files, programs and services, upgrade of outdated software, proper configuration of the necessary services and tools, and finally installation of necessary tools.
 
-Remedial Action
-For each identified numbered vulnerability, you should describe the remedial action taken to correct/resolve the vulnerability.       
-Also specify whether it was resolved 
+[Vulnerability Assessment]
+- General Security vulnerabilities because of outdated software: vim, postgres, tzdata, sudo, curl and libxslt
+Details: Outdated software is more susceptible to exploits
+Classifications: DLA-700-1, DLA-702-1,DLA-707-1, DLA-709-1, DLA-711-1 and DLA-718-1
+Exploitability: High - Remotely execute vulnerable C library functions as root.
+Severity: High - Arbitrary code execution
+- Bad SSH configuration (/etc/ssh/sshd_config)
+Details: SSH weak algorithms and cipher suites(CBC, MD5 and RC4)
+Classifications: CVE-2008-5161
+Exploitability: Medium - Vulnerable to MITM.
+Severity: Low -Disclosure of information.
+- Bad SSL Configuration
+Details: Weak cipher suites SSL v2-3 supported (POODLE).
+Classifications: CVE-2013-2566, CVE-2015-2808, CVE-2016-2183, CVE-2016-6329, CVE-2014-3566
+Exploitability: Medium - Vulnerable to MITM
+Severity: Low - Disclosure of information.
+- Bad Apache Configuration
+Details: Information leak on error pages, directory listing enabled, HTTPS enforcement disabled
+Exploitability: High - Allows web scouting, server scouting and MITM
+Severity: High - The attackers may take an advantage on that information and use it to access the server.
+- Outdated version and misconfiguration of phpmyadmin
+Details: The version of phpmyadmin is outdated and its configuration is improper, for instance, allowing root to access phpmyadmin without an authentication, running on HTTP and giving too many privileges to the wordpress user.
+Exploitability: Critical - it is very easy to access phpmyadmin because it is installed in the well-known path and attackers are able to access it without a password.
+Severity: Critical - When the attackers access phpmyadmin with the root privileges they can do everything they please.
+- Exposed files on the website
+Details: Large numbers of exposed files such as readme.html, license.txt, bak.sql and wordpress-2.6.tar.gz have been found.
+Exploitability: High - Allows attackers to know the version of the application, the data in SQL backup file and allows them to download the wordpress installer.
+Severity: Critical - The data in SQL backup file is very sensitive and the attackers may know the version of the application from the other exposed files.
+- Bad backup configuration (sql.bak)
+Details: A crontab job is scheduled daily to generate database dump to /var/www/bak directory, the file is accessible by any user because it is under the web root.
+Classification: CWE-219
+Exploitability: Critical - the whole database is publicly accessible in the URL.
+Severity: Critical - Allows unauthorised disclosure of information.
+- Malicious Script in Wordpress upload folder (jj.php)
+Details: Malicious php script that accepts and executes any command given in parameter /wp-content/uploads/2016/11/jj.php?command=$cmd directly from the upload directory.
+Classification: CWE-552
+Exploitability: Critical - An attacker can traverse the whole server without authentication.
+Severity: Critical - Allows unauthorised disclosure of information.
+- Malicious redirect on sendmail
+Details: Email sent to user [root] is redirected to user [user] by the aliases setting in /etc/aliases.
+Exploitability: High - User [user] can read all emails sent to [root].
+Severity: High - Email redirection on recipient root can lead to information disclosure and Identity theft
+- Bad Email configuration and insecure mail transfer protocol
+Details: Emailing over TLS is not enabled, anti-spam module (greylisting, spamassassin) is not installed, antivirus and antimalware modules are not installed.
+Exploitability: Medium - Insecure email communication is vulnerable to MITM attacks, spam email and emails containing virus and malware brings potential damage to the server.
+Severity: High - Vulnerable to multiple types of attacks.
+- Backdoor exposure on port 45454 and 5000
+Details: Port 45454 and 5000 are listened by netcat server attached with shell as executable, allows unauthenticated visitors to .
+Classification: CWE-552
+Exploitability: Critical - The backdoor can be found by a port scan of the server
+Severity: Critical - Allows unauthorised access to the server and manipulation for malicious intends.
+- Missing firewall
+Details: Firewall is not enabled
+Exploitability: High - Large numbers of ports including backdoor on port 45454 and 5000 are able to be found by port scanner tools.
+Severity: Medium - Allow attackers to take advantages from opened ports and attack the weaknesses of services.
+- System services Logging and auditing not working properly
+Details: System services logging and auditing are misconfigured and the log is insufficient, log file for user sessions /var/log/wtmp has been deliberately link to /dev/null.
+Classification: CWE-778
+Exploitability: Medium - Attacks can be hard to spot and trace with insufficient logging
+Severity: High - Allow attackers to access and change system configurations without leaving a trace behind.
+- Cache Poisoning due to multiple vendor DNS Query ID Field Prediction; DNS server cache snooping remote information disclosure
+Details: A DNS server is running on port 53. It exposures extra vulnerability to cache snooping attacks and DDOS attacks.
+Exploitability: Medium - Allows attackers to divert legitimate traffic to arbitrary sites by snooping DNS cache; Server could be taken down from a DDOS attack on DNS server.
+Severity: Medium - Potential risks in DNS cache poisoning and denial of service.
+- Python 2.6.8 and 2.7.9 is installed
+Details: 2 versions of python runtimes are installed, python 2.6.8 has known vulnerability CVE-2014-1912.
+Classification: CWE-121
+Exploitability: Medium - Attacker can run arbitrary code by exploiting the memory overflow vulnerability to gain the root privileges.
+Severity: Critical - Authentication can be bypassed to gain root privileges.
+- Bad authentication configuration (/etc/pam.d/auth)
+Details: Arbitrary password can be used to authenticate any account.
+Classification: CWE-592
+Exploitability: Critical - Root account can be authenticated using an arbitrary password.
+Severity: Critical - Root privilege can be granted.
+- Out of Date Wordpress
+Details: Wordpress 2.6 is outdated with large numbers of vulnerabilities.
+Classifications: CVE-2012-2400, CVE-2012-2399, CVE-2009-2853
+Exploitability: Critical - Allow attackers to XSS and inject arbitrary web script or HTML via the buttonText parameter.
+Severity: Critical - The attackers may gain admin privileges.
+- Bad Wordpress configuration
+Details: Files and folders were chmod as -rw-rw-rw- (666).
+Exploitability: Medium - Only local users on this machine allowed to take advantages.
+Severity: Medium - Local users may change the data on these files.
+- Bad Sudoers configuration which gives sudo to all users (/etc/sudoers, visudo)
+Details: Sudo permission is given to all users, allowing all users having the ability to escalate to the root user.
+Classifications: CEW-269
+Exploitability: High - Any user can escalate to root privileges user using sudo command.
+Severity: Critical - Improper privilege management
+- Bad Datetime
+Details: Date and time on the server are not correct.
+Exploitability: Low - It will be a problem with a timestamp on applications such as log.
+Severity: Low - It is difficult for forensic investigation.
+- Unnecessary software: X window packages (x11-*), postgresql, sldap, NFS server and NIS server
+Details: Unnecessary software may introduce additional vulnerabilities.
+Exploitability: Low - Unnecessary software with improper configuration can expose vulnerabilities.
+Severity: Low - Risk of exposing various of vulnerabilities.
+- Unencrypted Telnet server found
+Details: Unencrypted Telnet server is running on the server and sends username and password in plain text.
+Exploitability: Medium - Attackers may get username and password from Telnet which is not encrypted.
+Severity: Medium - Allows unauthorised disclosure of information
+- Bad Samba server configuration
+Details: Samba server is misconfigured which allows anonymous login. Samba web administration tool is publicly accessible, and synchronisation with unix passwords is enabled(which is not required).
+Exploitability: High - Anonymous user can access all shares in samba server, samba web admin tool exposing information on running samba server, enabling unix password sync increase the risk of server been compromised.
+Severity: Critical - Files in the server can be traversed by an attacker anonymously, information disclosure on samba server, risk of compromising samba server can result in taking command of the server.
+- Bad permission settings for critical resources (/etc/passwd, /etc/group, /etc/shadow, /home)
+Details: File containing user and credential information is universally readable and writable.
+Classification: CWE-732
+Exploitability: Medium - All authenticated users can view and modify critical resources of the server.
+Severity: High - Allow attacker to acquire and modify critical system resources with normal user privileges.
+- Cron executable giving wrong permissions to webroot
+Details: Daily cron job executes a script (/root/.fix-perms) which assigns improper permission to webroot directory (/var/www)
+Classification: CWE-732
+Exploitability: Medium - Webroot folder is modified universally, especially by www-data which runs the apache server.
+Severity: Medium - Allow attacker to easily alter the content in webroot from exploiting the running web application.
+- Exposed duplicate private key id_rsa
+Details: private key located in the /root folder
+Exploitability: Very Low - direct access to the private key when logged in as root
+Severity:Very Low - could allow for an opportunistic user to directly have access to it
+- Not the right Message of the day from Rob to the possible future intruders (/etc/motd)
+Details: There is a unicorn
+Exploitability: Visible soon as logged in.
+Severity: Made my day and makes you **** rainbows.
 
-Further Recommendations
-For any vulnerabilities or issues which have not been resolved, please specify any further recommendations here. 
-If there are any further actions to take for the future, also specify them here.
+[Remedial Action]
+- Bad backup configuration (sql.bak)
+Action: Change the target location of the mysql backup in crontab to /var/backups/.
+Justification: Only authorised users should be able to access the mysql backup file.
+- General Security vulnerabilities because of outdated software
+Action: upgraded the software version
+Justification: These softwares have been supported security patches by developers. Updating the softwares can solve this problem.
+- Bad SSH configuration
+Action: Force SSH to use only strong cipher suites such as AES-256 and strong hash algorithm such as SHA-2 instead.
+Justification: SSH is required so it must be running with strong algorithms.
+- Bad SSL Configuration
+Action: Disabled SSL v2-3 and enabled TLS1.2. Disabled weak cipher suites (RC4, MD5) and enabled strong cipher suites (AES-256) instead.
+Justification: Running the website on TLS1.2 instead of SSL v2-3 is more secure and it is difficult to disclose the information between users and the server.
+- Bad Apache Configuration
+Action: Stop information leak on error pages by changing the configuration of /etc/apache2/conf.d/security to ServerTokens Prod and ServerSignature Off. Disable directory index by a2dismod autoindex. Enforce user to use HTTPS by adding VirtualHost on port 80 to redirect every request to HTTPS.
+Justification: Information leakage should be avoided, protection against directory indexing is essential and HTTP may result in MITM.
+- Outdated version and misconfiguration of phpmyadmin
+Action: Remove outdated version and install the latest one, force admin to login with password, force HTTPS and give the minimum privileges to mysql users.
+Justification: Avoid unwanted authentication. HTTPS prevents MITM and proper privileges prevent data breaches.
+- Exposed files on the website
+Action: Remove files in webroot that discloses information.
+Justification: Limit scouting
+- Bad backup configuration (sql.bak)
+Action: Remove /var/www/bak/ directory, edit /var/spool/cron/crontabs/root to change the path of mysqldump to /var/backups.
+Justification: Change the path of generated backup file so only authorised user can access.
+- Malicious redirect on sendmail
+Action: Edit /etc/aliases file, remove alias from [root] to [user]
+Justification: Disabling redirect to prevent identity theft.
+- Malicious Script in Wordpress upload folder
+Action: Remove jj.php
+Justification: Remove backdoor.
+- Bad Email Configuration
+Action: Install exim4-daemon-heavy, enable email over TLS, enable and configure spamassassin module, install and configure greylist module, install and configure clamav, add delay to SMTP header.
+Justification: Email services runs over TLS are more secure, defensive measures such like spam checker, greylist and anti-malware is taken to protect the server.
+- Backdoor exposure on port 45454 and 5000
+Action: Terminate malicious processes. Backdoor on port 45454: Edit /var/spool/cron/crontabs/link to remove suspicious job which executes every minutes trying to restart the backdoor; Backdoor on 5000: remove backup-server script from /etc/init.d/
+Justification: Remove backdoors.
+- Missing firewall
+Action: Install and configure UFW to allow incoming traffics from necessary ports only
+Justification: Necessary ports are 22, 80, 137 and 443, 445 on TCP and 68, 138, 137 on UDP so we should allow only these ports and block incoming traffics from the other ports.
+- System services Logging and auditing not working properly
+Action: Install rsyslog package, install auditd package, re-create /var/log/wtmp file, create /var/log/lastlog
+Justification: Logging needs to be enabled and sufficient to monitor security critical events of the system.
+- Cache Poisoning due to multiple vendor DNS Query ID Field Prediction; DNS server cache snooping remote information disclosure
+Action: Uninstall DNS package
+Justification: DNS is not part of requirements and exposes unnecessary vulnerabilities.
+- Python 2.6.8 and 2.7.9 is installed
+Action: Uninstall python 2.6.8
+Justification: Duplicated python of major version is not needed and exposes unnecessary vulnerabilities.
+- Bad authentication configuration (/etc/pam.d/auth)
+Action: Modified the /etc/pam.d/auth file, change the strategy to prevent login with random passwords
+Justification: Server should only be accessed by properly authenticated users.
+- Out of Date Wordpress
+Action: Upgrade Wordpress to the latest version (4.7)
+Justification: Wordpress 2.6 has large numbers of critical vulnerabilities. This upgrade will not affect the data and functions on this website and will eliminate all vulnerabilities found.
+- Bad Wordpress configuration
+Action: Change the permissions on files and folders to 644 and 755 respectively.
+Justification: Recommended wordpress permissions.
+- Bad Sudoers configuration which gives sudo to all users (/etc/sudoers, visudo)
+Action: modify the sudoers file with visudo and commented the line giving sudo with full power to all users.
+Justification: Allows any user to escalate his privileges to root.
+- Bad Datetime
+Action: Install and configure NTP to update date and time automatically.
+Justification: Correct date and time are important for cyber forensic investigations.
+- Unnecessary software: X window packages (x11-*), postgresql, sldap, NFS server, NIS server
+Action: Uninstall x11-*, postgresql, sldap, nfs, nis and other related packages
+Justification: Those packages are not from requirements and expose unnecessary vulnerabilities.
+- Unencrypted Telnet server found
+Action: Remove Telnet server.
+Justification: Telnet does not meet the requirements and introduces vulnerabilities.
+- Bad Samba server configuration
+Action: Enable samba server signing, remove unnecessary shares, remove swat, disable anonymous login and unix password sync.
+Justification: Samba should only expose necessary shares according to the requirement; anonymous access should not be permitted; other unnecessary functionalities and modules should also be removed to reduce exposure to vulnerabilities.
+- Bad permission settings for critical resources (/etc/passwd, /etc/group, /etc/shadow, /home)
+Action: Change permissions for the files /etc/passwd, /etc/group to 633, /etc/shadow to 640, /home to 711, remove unnecessary and malicious users.
+Justification: Critical resources for the system should only be accessible by authorsied users, unnecessary users should be deleted since it increases exposure to vulnerabilities.
+- Cron executable giving wrong permissions to webroot
+Action: Removed from the /root folder and from the root cron /var/spool/cron/crontabs/root
+Justification: Disable the permissions changes that would allow modifications of the webroot folder by unwanted users.
+- Activate SELinux (/etc/selinux/config)
+Action: Install selinux-basics selinux-policy-default auditd, activate selinux, reboot, modify /etc/selinux/config and change its mode to permissive. Then finished by checking the installation and status were correct.
+Justification: Define a scope of action for the applications. This reduces the possibilities to spread to other parts of the system if an application is infected.
+- Exposed duplicate private key id_rsa
+Action: Remove it from /root
+Justification: Direct access to Rob keyboard could give direct access to the private key.
+- Not the right Message of the day from Rob to the possible future intruders (/etc/motd)
+Action: Changed to a threatening message.
+Justification: Discourage potential intruders to continue
+
+
+[Further Recommendations]
+scheduled scans (weekly or daily cron running Chkrootkit, Rkhunter, immutable files check and clamav scan)
+logs monitoring (logwatch/logcheck) and send your log files to a remote log server
+install an IDS (intrusion detection system, tripwire for example)
+Change password to a stronger one Or change login to key based authentication
+Schedule a weekly integrity control of packages and Keep a pristine copy of critical system files (such as ls, ps, netstat, md5sum) and check them with debsums.
+Change the SSH port to something bigger than 1000
+Install Fail2ban (Brute Force counter)
+Dirty Cow vulnerability awareness (upgrade distro to patched version)
+Legitimacy check of the upload files.
+Fully configure SELinux and pass into enforcing mode.
+
+
+[Random Team patching assessment]
+
+Patched vulnerabilities from our list are not listed again.
+
+- Microsoft Windows SMB Shares Unprivileged Access with NULL session
+- Bad SSH configuration (/etc/ssh/sshd_config)
+- Dovecot: unencrypted and useless
+- Bad Apache Configuration
+- DOS caused by file exposure on the website
+- Information leakage on the website (licence, installer, readme.html)
+- Wrong mysql backup location /var/www/bak/bak.sql
+- Malicious Script /var/www/wp-content/uploads/2016/11/jj.php not removed but managed.
+- Malicious redirect, emails sent to user [root] is user [user] by alias setting in /etc/aliases
+- Spamassassin is not enabled, there is no antivirus, anti-malware software or greylisting software installed.
+- Apache logging poorly configured
+- Backdoors on ports [45454][5000] created by [link] and [/etc/init.d/backup-server} not removed but not accessible thanks to ufw
+- Unnecessary DNS server having vulnerabilities (cache poisoning and ddos)
+- Unnecessary versions of python 2.6,2.7 (being vulnerable) when 3.4 is installed
+- Bad Wordpress configuration destroyed theme of websites
+- Common-auth config file not properly fixed but the distro upgrade seems to have fixed the authentication issue
+- Delay of 2 minutes on date time
+- SELinux disabled
+- Unnecessary Window system infrastructure not removed
+- Unnecessary Postgresql not removed, running and listening
+- Unnecessary LDAPs (slapd,openldap) server not removed and slapd listening port 389
+- Exposed duplicate private key id_rsa in /root
+- Logging is disabled for wtmp
+- Wrong samba.conf setting allows anonymous login
+- Unix passwords synced with samba ( exploited samba allows direct privilege escalation)
+- NFS shares remotely accessible due to wrong configurations
+- Unnecessary NIS server exposures vulnerabilities
+- Wrong Permissions for /home 755 instead of 711
+- Bad privileges for alex and user that are in unwanted groups: cdrom, floppy, audio, dip, video, plugdev
+- /root/.fix-perms(cron) executable giving wrong permissions to /var/www
+- Unnecessary entries for/ etc/passwd: telnet, link, bind, dovecot, dovenull,postgres, user, openldap
+- Unnecessary exposed open ports
+- Empty Passwords in /etc/shadow for sys,link,openldap,mysql

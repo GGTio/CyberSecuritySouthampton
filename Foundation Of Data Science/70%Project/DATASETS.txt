@@ -1,0 +1,64 @@
+Some cool websites:
+	- https://www.data.gov/
+	- http://www.fao.org/faostat/en/#data
+	- http://search.who.int
+	- https://www.assetmacro.com
+	- https://www.ons.gov.uk/
+	- https://datausa.io/profile/geo/united-states/
+	- http://www.kdnuggets.com/datasets/index.html
+
+uk law process:
+	https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/575828/Soft_Drinks_Industry_Levy_-_summary_of_responses.pdf
+
+
+Datasets research:
+- Obesity trending
+	http://www.telegraph.co.uk/science/2016/03/31/british-people-will-be-fattest-in-europe-by-2025/ (graph)
+- US obesity prevalence
+	https://www.cdc.gov/NCHS/data/hestat/obesity_adult_07_08/obesity_adult_07_08.pdf
+- regional data for sugar consumption UK (at least 1985)
+	- 1974 - 2000 consumption (zip but hard to read, needs analysis of the ids)
+- World sugar consumption at least 1985
+	- Australia model (good for predictions)
+	http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0151460
+	-US Sugar Consumption from 1966 to 2015
+- obesity data UK at least 1985
+	- Different health uk institutions records
+	https://puu.sh/t5Qgk/fbcb1771bc.jpg
+- obesity data WORLD at least 1985
+	http://www.kickthecan.info/sites/default/files/documents/Relationship%20of%20Soft%20Drink%20Consumption%20to%20Global%20Overweight,%20Obesity,%20and%20Diabetes-%20A%20Cross-National%20Analysis%20of%2075%20Countries.pdf
+- research papers soft drinks -> find the datasets used
+- research papers obesity -> find the datasets used
+- age demographics UK
+	- 1950-2015 population + age 0-14 + age 15-64 + age 65+ + pop masc + pop fem
+	http://knoema.fr/atlas/Royaume-Uni/topics/Donn%c3%a9es-d%c3%a9mographiques/Population/Population
+	http://knoema.fr/atlas/Royaume-Uni/Population-%c3%a2g%c3%a9e-de-0-14-percent-du-total
+	http://knoema.fr/atlas/Royaume-Uni/Population-ages-15-64-percent-of-total
+	http://knoema.fr/atlas/Royaume-Uni/Population-%c3%a2g%c3%a9e-de-65-ans-et-plus-percent-du-total
+	http://knoema.fr/atlas/Royaume-Uni/topics/Donn%c3%a9es-d%c3%a9mographiques/Population/Population-masculine
+	http://knoema.fr/atlas/Royaume-Uni/topics/Donn%c3%a9es-d%c3%a9mographiques/Population/Population-f%c3%a9minine
+	- 
+- sugar prices worldwide
+	- Sugar prices 2012-2016
+		https://www.assetmacro.com/united-states/industry/soft-drinks-industry/
+	- IMF World Monthly sugar prices from 1980 to 2016
+	- sugar cane/beet/crops in UK and US in $
+		http://www.fao.org/faostat/en/#data/PP
+	- sugar prices for consumers 1966-1990
+		http://www.fao.org/faostat/en/#data/PA
+- soft drinks prices UK
+- soft drinks prices world
+	- soft drinks prices 1962-1972-2015 US
+	http://www.bbhq.com/prices.htm
+	- cocacola & pepsi prices 
+	http://www.foodtimeline.org/foodfaq5.html#cocacola
+- effect of soft drinks:
+	https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2908024/#R38
+- soft drinks consumption 2008-2014
+	- BSDA report (pdf) (good to compare with household data)
+
+
+Research:
+Researchers have also linked prices to soft drink consumption. For example, Zheng and Kaiser (2008) estimate that the price elasticity of demand for soft drinks is approximately −0.15. Combining the results from Besley and Rosen (1999) and Zheng and Kaiser (2008) suggests that a ten percent increase in the soft drink tax will reduce the consumption of soft drinks by two percent (10 × 1.29 × 0.15).12 This calculation is consistent with the conclusion reached by Tefft (2008) that an increase in soft drink taxes reduces the probability of any household expenditure on soft drinks.
+
+Maybe used in conclusion to propose better solutions.
