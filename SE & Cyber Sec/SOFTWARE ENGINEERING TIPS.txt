@@ -1,0 +1,80 @@
+SOFTWARE ENGINEERING - EXAM
+
+IMPORTANT WHEN REVISING:
+
+Oliver -> covered mostly by laboratory but still 1 question (static probably !!)
+Mu 2 questions
+Sadick 2 questions
+
+5 questions choose 3
+
+TOPICS:
+	X CORAS (the "what is CORAS" slide) Remember this is a good way to show technical risk 
+		8 step process, pay attention to the notation, be able to draw these diagrams !!
+		Usual: Story then do the diagrams.
+
+	X USE CASES
+		Draw a use case diagram + misuse case(in the use case) (abuse -> not in the same diagram )
+		Difference between abuse cases and misuse cases
+		IMPORTANT: TIME for diagrams is really short be used to drawing diagrams.
+
+	X LINDDUN Process
+		Explain + able to compare
+		From a diagram (DFD's) being able to draw a Threat tree pattern (not too long, like the slides)
+
+	X STRIDE Process
+		Clear process (1-4)
+
+		STRIDE is a classification scheme for characterizing known threats according to the kinds of exploit that are used (or motivation of the attacker). The STRIDE acronym is formed from the first letter of each of the following categories.
+
+Spoofing Identity “Identity spoofing” is a key risk for applications that have many users but provide a single execution context at the application and database level. In particular, users should not be able to become any other user or assume the attributes of another user.
+
+Tampering with Data Users can potentially change data delivered to them, return it, and thereby potentially manipulate client-side validation, GET and POST results, cookies, HTTP headers, and so forth. The application should not send data to the user, such as interest rates or periods, which are obtainable only from within the application itself. The application should also carefully check data received from the user and validate that it is sane and applicable before storing or using it.
+
+Repudiation Users may dispute transactions if there is insufficient auditing or recordkeeping of their activity. For example, if a user says, “But I didn’t transfer any money to this external account!”, and you cannot track his/her activities through the application, then it is extremely likely that the transaction will have to be written off as a loss.
+
+Therefore, consider if the application requires non-repudiation controls, such as web access logs, audit trails at each tier, or the same user context from top to bottom. Preferably, the application should run with the user’s privileges, not more, but this may not be possible with many off-the-shelf application frameworks.
+
+Information Disclosure Users are rightfully wary of submitting private details to a system. If it is possible for an attacker to publicly reveal user data at large, whether anonymously or as an authorized user, there will be an immediate loss of confidence and a substantial period of reputation loss. Therefore, applications must include strong controls to prevent user ID tampering and abuse, particularly if they use a single context to run the entire application.
+
+Also, consider if the user’s web browser may leak information. Some web browsers may ignore the no caching directives in HTTP headers or handle them incorrectly. In a corresponding fashion, every secure application has a responsibility to minimize the amount of information stored by the web browser, just in case it leaks or leaves information behind, which can be used by an attacker to learn details about the application, the user, or to potentially become that user.
+
+Finally, in implementing persistent values, keep in mind that the use of hidden fields is insecure by nature. Such storage should not be relied on to secure sensitive information or to provide adequate personal privacy safeguards.
+
+Denial of Service Application designers should be aware that their applications may be subject to a denial of service attack. Therefore, the use of expensive resources such as large files, complex calculations, heavy-duty searches, or long queries should be reserved for authenticated and authorized users, and not available to anonymous users.
+
+For applications that do not have this luxury, every facet of the application should be engineered to perform as little work as possible, to use fast and few database queries, to avoid exposing large files or unique links per user, in order to prevent simple denial of service attacks.
+
+Elevation of Privilege If an application provides distinct user and administrative roles, then it is vital to ensure that the user cannot elevate his/her role to a higher privilege one. In particular, simply not displaying privileged role links is insufficient. Instead, all actions should be gated through an authorization matrix, to ensure that only the permitted roles can access privileged functionality. 
+
+	X Security Pattern Template
+		Check the main sections, no need to remember everything
+
+	X Risk-based testing (decisison based section)
+		Find the most important defects early
+		Business side of things (where is the risk, where i'm going to spend the money and where I'm going to do my testing)
+		Being able to explain why and how use it.
+		
+	X Model Checking
+		When use it and how use it.
+		Set conditions and make sure they are all followed.
+		
+
+	Code & design verification
+		But it is expensive 
+
+	X STATIC Analysis
+		limitations (false positives, false negatives)
+		Be aware that the cvs repositories used for these tools are usually 3 month old
+		Good but not the end point
+		Cheapest method is to make sure from day 1 code is secure.
+
+	X Dynamic Analysis
+		While it is running
+		What can you find (list of things)
+
+IMPORTANT:
+	- expand acronyms
+	- describe the processes
+	- compare and contrasts methodologies
+

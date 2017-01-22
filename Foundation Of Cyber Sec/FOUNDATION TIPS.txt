@@ -1,0 +1,54 @@
+FOUNDATION
+
+WHAT HE LIKES:
+- short answers
+- Start the answer by putting the in context, explaining the context.
+(the context is explaining where the question belongs to. For example: There are 3 classes of 
+anonymisation, the one you are asked belongs to x and is characterized by doing this)
+- 2 types of questions: textbook and problem solving => 2 ways to answer
+	TEXTBOOK: short answer shows understanding and proves you know the topic.
+	Problem Solving: same as for the textbook but no need for conclusion
+- Show that you know the material, structure of answers:
+	A. Introduction with opening sentence that puts context and specialize to get to the point
+	B. Answer the question
+	C. Conclusion -> own assessment about the object (give drawbacks or other options to show you mastered the mterial)
+
+	Ex with biometrics:
+	A: Caracterize someone by his knowledge, his person, ...
+	B: give 3-4 different types of biometric authentication methods + their pros and cons
+	C: End up with a personal conslusion on the topic.
+
+Facebook Questions (thursday):
+Go through the "guessing entropy" again.
+The "levels of innocence" in the context of Crowds.
+Explain the formula of "differential Privacy".
+"Passwords Entropy"
+"NPV"
+n = years
+C_0 initial Cost
+B = Benefit at time t(a specific year)
+C_t = Costs at time t
+k = NPV at x% (k = x)
+(1+k) => %benefit that you could have made investing it otherwise
+
+IMPORTANT: try to solve the course example in the slides before thursday
+
+Problem Solving examples:
+Q: I buy 2 apples, each cost 2£, how much did I pay ?
+A. To solve this problem I must use multiplication
+B. 4
+
+Important You get way more marks if you can put a context, then just the answer. The answer is good but it must really show that you know the subject.
+
+Q: How many atempts do I need to crack this password ?
+A. Give The attack approach we used and explain its process
+B. Give the calculation
+
+Important: The Problem Solvin gquestions do not need a conclusion.
+
+Possible EXERCICES solving topics:
+PASSWORDS -> calculate entropy or 
+ANONIMISATION
+PROBAL INNOCENCES 
+NPV
+

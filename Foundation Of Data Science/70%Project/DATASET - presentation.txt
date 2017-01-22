@@ -1,0 +1,20 @@
+DATASET - presentation 1min
+
+1. Main Sources (cf readmes)
+
+2. Explain each dataset rapidly (define clearly household, eating out, all food, historical data(state what exactly we have))
+
+3. Explain their combination: Consumption to track the current trends. Health to show the problems with the current trends and prices to try to find the relations between prices and consumption and Argue with the proposition.
+
+4. Just speak about the Time ranges we have.
+
+
+
+Rem: Explain that we had a lot more datasets, for example: Sugar prices but we realized that soft drinks aren't influenced by the sugar price because big part of their price is due to marketing.
+We found data about US sugar prices that we normalized with the exchange rates for each year but even doing so it seemed that the sugar price had no influence on the soft drinks consumption or soft drinks prices this is why we decide not to plot them.
+1. When going through cite the sources
+2. Present the datasets:
+	What's inside
+	Range
+	structure of the datasets
+3. Explain brifly how we combined them
