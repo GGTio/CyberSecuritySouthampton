@@ -1,0 +1,193 @@
+% Name: 		Gerard Tio Nogueras
+% studend ID: 	28994329
+% Course: 		Masters in Cyber Security
+% Class: 		Cyber Crime - CRIM6008
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt]{article} % Default font size is 12pt, it can be changed here
+
+\usepackage{geometry} % Required to change the page size to A4
+\geometry{a4paper} % Set the page size to be A4 as opposed to the default US Letter
+
+\usepackage{graphicx} % Required for including pictures
+
+\usepackage{float} % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
+\usepackage{wrapfig} % Allows in-line images such as the example fish picture
+
+\linespread{1.2} % Line spacing
+
+\usepackage{csquotes} % Quoting
+
+\usepackage{hyperref} % URL Spacing
+%\setlength\parindent{0pt} % Uncomment to remove all indentation from paragraphs
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+
+\textsc{\LARGE University of Southampton}\\[1.5cm] % Name of your university/college
+\textsc{\Large Msc Cyber Security}\\[0.5cm] % Major heading such as course name
+\textsc{\large Cyber Crime, Insecurity and the Dark Web}\\[0.5cm] % Minor heading such as course title
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Criminology in the future: Horizon Scanning.}\\[0.4cm]
+
+\HRule \\[0.4cm]
+{\huge \bfseries Increased web exposure of society is empowering phishing}
+\\[0.4cm] % Title of your document
+\HRule \\[1.5cm]
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+Gerard \textsc{Tio Nogueras} % Your name
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+
+\end{flushright}
+\end{minipage}\\[4cm]
+
+{\large \today}\\[3cm] % Date, change the \today to a set date if you want to be precise
+
+%\includegraphics{Logo}\\[1cm] % Include a department/university logo - this will require the graphicx package
+
+\vfill % Fill the rest of the page with whitespace
+\end{titlepage}
+
+%STRUCTURE
+
+% Introduction
+%% Definition on the terms used (phishing, spear phishing, whaling)
+%% + examples of powerfull attacks
+\section{Introduction}
+We are going to show the reason companies and individuals should consider spear phishing very carefully and show its rise in our age due to social behaviour. We will start by introducing the relevance of spear phishing in current times by explaining its dangers and the strategies they use. We will follow with the high utility of spear phishing for criminal organisations and the enhancement of spear phishing due to the current behaviour of our society. Our third argument will discuss the future factors that will influence spear phishing. Finally, we will end with ongoing research for countermeasures and personal thoughts on the subject.\\
+Let us start with some definitions and famous examples to validate the importance of the subject.
+\subsection{Definitions}
+\textbf{Phishing}: \textquote{phishing is a scalable act of deception whereby impersonation is used to obtain information from a target} \cite{phishing definition}\\
+\textbf{Spear phishing}: \textquote{Phishing attempts directed at specific individuals or companies have been termed spear phishing}. The attackers start by gathering as much information from public sources (public registries, social networks, blogs, ...) or from private sources (obtained from previous attacks. Then he will forge a personalised phishing email targeting the victim.\cite{spear phishing definition,spear phishing def}\\
+\textbf{Social engineering}: Kevin Mitnick explains in his book that the weakest link in any security system is the person holding the information. Therefore tricking these persons is the key to everything. \cite{social engineering definition, mitnick}\\
+\textbf{Whaling}: \textquote{Whaling is a type of fraud that targets high-profile end users such as C-level corporate executives, politicians and celebrities.} \textquote{In the case of whaling, the masquerading web page/email will take a more serious executive-level form. The content will be crafted to target an upper manager and the person's role in the company.}\cite{whaling definition,wiki whaling definition}\\
+\textbf{Malware}: \textquote{Short for "malicious software".  The effect of malware is to cause something unexpected [...]on your computer.(disrupt computer operation, collect sensitive information, access a private computer system, ...)} \cite{malware definition}\\
+\subsection{Famous Examples}
+To introduce you to the world of phishing here are some famous examples of spear phishing:
+\begin{itemize}
+\item RSA: In 2011, RSA Security firm was targeted by 2 waves of phishing attacks targeting 4 of their employees. These crafted emails were so credible, that one of the employees took it out of his junk box and clicked on a malicious link, giving the attackers full access to the company's network. \cite{examples}
+\item Ubiquity networks: In 2015, employees were tricked into transferring \$46.7 million to accounts held by third parties. This was achieved through impersonation of the finance department by creating fake requests from executives thanks to spoofed e-mail addresses and look-alike domains.\cite{examples}
+\item Oak Ridge National Laboratory: In 2011, the lab got targeted by a massive spear phishing attack to 10\% of their 5000 employees, faking to be the HR department. 10\% of these opened the mail and clicked on the malicious link and unfortunately, 2 computer were not protected properly against these malwares and the attackers used these doors to steal a huge amount of data.\cite{labo example}
+\item APT1: APTs are high-level cyber attacks which have as objective to stay in network for long periods of time and steal data continuously. These attacks have the characteristic to start with waves of spear phishing to middle level targets and get a foothold in the companies from there.\cite{APT,APT definition}
+\item Whaling for political objectives: Using the APT cycle\cite{APT} combined with high-level spear phishing targeting politicians during the elections, we gain access to a lot of advantageous information, this is what happened in Hong Kong in 2010. \cite{whaling}
+\end{itemize}
+These examples are here to show how a simple mistake from one employee can compromise entire networks and how wide the range of targets can be.
+
+%Body
+%%Arg1 Show that spear phishing is already very powerfull + why we fall for attacks (cf Breaching the Human Firewall: Social engineering in Phishing and Spear-Phishing Emails + the state of Phishing attacks) + examples of cases
+
+%%Arg2 Explain the high utility for criminal organisations + Explain to social aspect of it (weak links, web exposure, social engineering, ... (cf state of phishing)
+
+%%Arg3 Future factors that will influence spear phishing: trends+training+awareness (cf Future Trends in Cybercrime and the Role of Organized Crime+DEFENDING AGAINST SPEAR-PHISHING: MOTIVATING USERS THROUGH FEAR APPEAL MANIPULATIONS)
+\section{Body}
+Now that we have introduced the subject, let us dive into the real interest of this essay: current and future social factors influencing spear phishing.
+\subsection{The power of spear phishing}
+My first argument will target the reason spear phishing deserves more attention.
+
+Researchers did a study on the effectiveness of spear phishing\cite{human firewall} on users under different conditions by creating 3 types of emails: spam, genuine and spear phishing emails; using 4 types of social engineering approaches: authority(CEO), scarcity(limited by a factor like time or amount), social proof(action already taken by peers) and no strategy; and under different pressure situations. The results showed a high rate of failure when having to detect spear phishing emails in general. The most effective social engineering technique was the authority where the participants were unable to reliably distinguish between spear phishing emails and genuine ones. These results are scary considering the rise of spear phishing because \textquote{it doesn't matter 
+how many firewalls, encryption software, certificates, or two-factor authentication mechanisms an organisation has if the person behind the keyboard falls for a phish.}\cite{state of phishing}
+
+\subsection{Spear phishing for Criminal organisations}
+My second argument will target the interest of criminal organisations for this type of schemes.
+
+Since the arrival of organised crime(OC) in the cyber space, we have seen 3 types of trends: Data stealing, transaction-based crimes and actual workings of the internet.\cite{future trends}\\
+The idea of the acts is always monetization, maximising profit with efficiency. The method that seems to be the most profitable is social engineering because this method is cheap, easy, very effective and allows for a lot of possibilities after a successful entry such as data theft, malware deployment, and a foothold in companies for future attacks. Many of the OC groups have been involved in numerous spear phishing attacks combined with whaling attacks as prime social engineering attacks. Additionally, a tendency for the  development  of human-based social engineering is noted because it works in many cases where technological methods fail.\\
+Social networks have changed the game for spear phishing. Social networks, instant messaging and any application involving personal data have become targets for attackers since they directly allow for some type of monetization, but especially because they allow for this types of powerful attacks that are social engineering attacks through the internet: spear phishing. \cite{state of phishing,social networks}
+\subsection{Future factors}
+Finally, my third argument will explain how current society enhances this types of attacks and if any changes are to be expected in the future.\\
+The factors that are expected to influence the future of spear phishing are the following:
+\begin{itemize}
+\item Botnets: One thing is sure is that there will be a widespread use of botnets. Botnets will become more financially driven by attacking all types of digital devices(especially phones which are very unprotected) capturing more data for more sophisticated spear phishing attacks.\cite{future trends,social engineering}
+\item Awareness: As I will go in the counter measures as well, companies are realising that training will be essential. Unfortunately will training be enough against attacks that are going to become more and more tailored?
+\item Social networks: Privacy rules, encryption, security of all applications with private data will improve, but will the users make use of it? Update their software, update their privacy policies? Training at a younger age will probably be needed to start implementing this for everyone in the future generations.
+\end{itemize}
+\textquote{Organised criminal activity in cybercrime is predicted to grow and will affect the financial security of online business and cause widespread social harm}\cite{future trends}\\
+To fight this growing activity we will require a combination of technology and relevant, up-to-date  laws  and  policies  as  well  as  the  constant  reformulation  of  crime  prevention  practices. This will require effective partnerships between the state, private actors and multilateral groupings  of  states,  corporations  and  consumer  groups.
+Luckily law enforcement, academia and industry are getting better organised (attack reports, information sharing, trends analysing) and there is hope for the future.\cite{state of phishing, future trends}
+
+%Conclusion
+%% Countermeasures for the future (cf Defending Against Spear-Phishing: Motivating Users Through Fear Appeal Manipulations)
+\section{Conclusion}
+I will use this space not to sum up my arguments but to hopefully help the readers improve their capacity to protect against these attacks and protect their companies against them.
+\subsection{Countermeasures}
+In the field of research there are 2 main topics to counter spear phishing\cite{state of phishing, urgency, filtering}:
+\begin{itemize}
+\item Training: make your employees and the society aware of these types of attacks, and train them to recognise them through games, exercises, presentations, ... \\
+Some go a bit further and try to create a training that answers today's needs: low cost, pinch the interest of participants and have a high effectiveness\cite{fear}
+\item Make it invisible: If the users can not see the crafted emails, they are protected, therefore there is a lot of research into creating advanced systems of filtering using machine learning and smart recognition of suspicious links to stop them before reaching the user.
+\end{itemize}
+\textquote{Spear phishing [...] will require equally targeted education and crime prevention efforts}\cite{future trends}
+\subsection{Personal thoughts}
+I am scared. Scared of becoming paranoiac. Because I have already tried my whole life to minimise my web presence but it is almost inevitable. And even if you are almost not present there are high probabilities that someone you are close to in your group of friends, family or work is. One of the reasons I have taken Cyber Security courses is to help our world against this type of attacks by creating a bigger community of cyber Security and spread knowledge and awareness. Because I think this is the way we will keep our evolving world safe.
+% Bibliography
+\newpage
+\begin{thebibliography}{99}
+\bibitem {phishing definition} Lastdrager, E. (2017). Achieving a consensual definition of phishing based on a systematic review of the literature. [online] Available at: \url{https://crimesciencejournal.springeropen.com/articles/10.1186/s40163-014-0009-y} [Accessed 19 Mar. 2017].
+
+\bibitem {spear phishing definition} Fr.wikipedia.org. (2016). Spear phishing. [online] Available at: \url{https://fr.wikipedia.org/wiki/Spear_phishing} [Accessed 19 Mar. 2017].
+
+\bibitem {spear phishing def} En.wikipedia.org. (2017). Phishing. [online] Available at: \url{https://en.wikipedia.org/wiki/Phishing#Spear_phishing} [Accessed 19 Mar. 2017].
+
+\bibitem {social engineering definition} Mitnick, K., Simon, W. and Wozniak, S. (2013). The art of deception. Hoboken, N.J.: Wiley.
+
+\bibitem{mitnick} Mitnick, K., and Simon, W. 2002. 
+The Art of Deception: Controlling the Human Element of Security. Indianapolis, IN: Wiley.
+
+\bibitem {whaling definition} Rouse, M. (2014). What is whaling? [online] SearchSecurity. Available at: \url{http://searchsecurity.techtarget.com/definition/whaling} [Accessed 19 Mar. 2017].
+
+\bibitem {wiki whaling definition} En.wikipedia.org. (2017). Phishing. [online] Available at: \url{https://en.wikipedia.org/wiki/Phishing#Whaling} [Accessed 19 Mar. 2017].
+
+\bibitem {malware definition} Ed Zaluska, Implementing Cybersecurity - COMP6230. Slides: Malware 1-2.
+
+\bibitem {examples} Brecht, D. (2016). Spear Phishing: Real Life Examples. [online] InfoSec Resources. Available at: \url{http://resources.infosecinstitute.com/spear-phishing-real-life-examples/#gref} [Accessed 19 Mar. 2017].
+
+\bibitem {labo example} Zetter, K. (2015). Hacker Lexicon: What Is Phishing?. [online] WIRED. Available at: \url{https://www.wired.com/2015/04/hacker-lexicon-spear-phishing/} [Accessed 19 Mar. 2017].
+
+
+\bibitem {APT} Mandiant report, APT1 Exposing One of China's Cyber Espionage Units.2013. Available at \url{https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/mandiant-apt1-report.pdf} [Accessed 19 Mar. 2017].
+
+\bibitem {APT definition} Techopedia.com. (2017). What is an Advanced Persistent Threat (APT)?. [online] Available at: \url{https://www.techopedia.com/definition/28118/advanced-persistent-threat-apt} [Accessed 19 Mar. 2017].
+
+\bibitem {whaling} Li, F., Lai, A. and Ddl, D. (2011). Evidence of Advanced Persistent Threat: A case study of malware for political espionage - IEEE Xplore Document. [online] Ieeexplore.ieee.org. Available at: \url{http://ieeexplore.ieee.org/abstract/document/6112333/} [Accessed 19 Mar. 2017].
+
+\bibitem {urgency} Bull, D. (2015). The Past, Present, and Future of Phishing and Malware. [online] Available at: \url{https://securingtomorrow.mcafee.com/business/security-connected/past-present-and-future-of-phishing/} [Accessed 19 Mar. 2017].
+
+\bibitem {social engineering} Roderic Broadhurst and Mamoun Alazab, Spam and Crime, Social engineering and spear phishing. [Online] Available at: \url{http://press-files.anu.edu.au/downloads/press/n2304/pdf/ch30.pdf} [Accessed 19 Mar. 2017]
+
+
+\bibitem{state of phishing} Jason Hong. 2012. The state of phishing attacks. Commun. ACM 55, 1 (January 2012), 74-81. Available at DOI: \url{http://dx.doi.org/10.1145/2063176.2063197} [Accessed 19 Mar. 2017]
+
+\bibitem {social networks} Nagy, J. and Pecho, P. (2009). Social Networks Security - IEEE Xplore Document. [online] Ieeexplore.ieee.org. Available at: \url{http://ieeexplore.ieee.org/abstract/document/5210996/} [Accessed 19 Mar. 2017].
+
+\bibitem {filtering} Laszka, A., Vorobeychik, Y. and Koutsouko, X. (2015). Optimal Personalized Filtering Against Spear-Phishing Attacks. [online] Available at: \url{http://www.vuse.vanderbilt.edu/~koutsoxd/www/Publications/laszka2015optimal.pdf} [Accessed 19 Mar. 2017].
+
+\bibitem {human firewall}Butavicius et al.2015. Breaching the Human Firewall: Social engineering in Phishing and Spear-Phishing Emails. Australasian Conference on Information Systems. Available at arxiv: \url{https://arxiv.org/ftp/arxiv/papers/1606/1606.00887.pdf} [Accessed 19 Mar. 2017]
+
+\bibitem {fear} Schuetz, Sebastian and Lowry, Paul Benjamin and Thatcher, Jason, Defending Against Spear-Phishing: Motivating Users Through Fear Appeal Manipulations (June 27, 2016). 20th Pacific Asia Conference on Information Systems (PACIS 2016), Chiayi, Taiwan, June 27–July 1. Available at SSRN: \url{https://ssrn.com/abstract=2861410} [Accessed 19 Mar. 2017]
+
+\bibitem {future trends} Pakistan Society of Criminology. Future Trends in Cybercrime and the Role of Organized Crime. Pakistan Journal of Criminolgy Volume 2, No. 4, October, 2010. Available at \url{http://pjcriminology.com/assets/downloads/PJCVol2No4Oct2010.pdf} [Accessed 19 Mar. 2017]
+
+\bibitem {trends and issues} Mamoun Alazab and Roderic Broadhurst, Spam and criminal activity, N°. 526 December 2016, Trends and issues in crime and criminal justice, Australian Institute of Criminology, Australian government. Available at: \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2467423} [Accessed 19 Mar. 2017]
+
+\end{thebibliography}
+\end{document}

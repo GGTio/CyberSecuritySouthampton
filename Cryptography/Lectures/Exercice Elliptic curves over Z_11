@@ -1,0 +1,88 @@
+Exercice Elliptic curves over Z_11
+----------------------------------
+
+y^2 = x^3 + x + 6 over Z_11
+
+1) check validity of the equation: 
+4a^3 + 27b^2 = 4 +27*36= 976 mod(11) = 8 Ok
+
+2) calculate the points on the elliptic curve:
+
+x=0 , y^2 = 6
+x=1 , y^2 = 8
+x=2 , y^2 = 5
+x=3 , y^2 = 3
+x=4 , y^2 = 8
+x=5 , y^2 = 4
+x=6 , y^2 = 8
+x=7 , y^2 = 4
+x=8 , y^2 = 9
+x=9 , y^2 = 7
+x=10 , y^2 = 4
+
+Calculate all y^2 for all y in Z_11 this allows to find the quadratic residues
+
+y=0 => y^2 = 0
+y=1 => y^2 = 1
+y=2 => y^2 = 4
+y=3 => y^2 = 9
+y=4 => y^2 = 5
+y=5 => y^2 = 3
+y=6 => y^2 = 3
+y=7 => y^2 = 5
+y=8 => y^2 = 9
+y=9 => y^2 = 4
+y=10 => y^2 = 1
+
+Then do a table to check up to find what are the values of y that give that answer for that particular x to find the dots of the elliptic curve
+
+x=0 , y^2 = 6 ==> no solution
+x=1 , y^2 = 8 ==> no solution
+x=2 , y^2 = 5 ==> 4,7 
+x=3 , y^2 = 3 ==> 5,6
+x=4 , y^2 = 8 ==> no solution
+x=5 , y^2 = 4 ==> 2,9
+x=6 , y^2 = 8 ==> no solution
+x=7 , y^2 = 4 ==> 2,9
+x=8 , y^2 = 9 ==> 3,8
+x=9 , y^2 = 7 ==> no solution
+x=10 , y^2 = 4 ==> 2,9
+
+Are we have the points: (2,4) (2,7) (3,5) (3,6) (5,2) (5,9) (7,2) (7,9) (8,3) (8,8) (10,2) (10,9) and the point at infinity O
+
+============================================================
+
+Exercice Elliptic curves over Z_5
+----------------------------------
+
+y^2 = x^3 + x + 6 over Z_5
+
+
+1) check validity of the equation: 
+4a^3 + 27b^2 = 4 +27*36= 976 mod(11) = 8 Ok (because =/= 0)
+
+2) calculate the points on the elliptic curve:
+
+x=0 , y^2 = 1
+x=1 , y^2 = 3
+x=2 , y^2 = 1
+x=3 , y^2 = 1
+x=4 , y^2 = 4
+
+Calculate all y^2 for all y in Z_5
+
+y=0 => y^2 = 0
+y=1 => y^2 = 1
+y=2 => y^2 = 4
+y=3 => y^2 = 4
+y=4 => y^2 = 4
+
+Then do a table to check up to find what are the values of y that give that answer for that particular x to find the dots of the elliptic curve
+
+x=0 , y^2 =  ==> 0
+x=1 , y^2 =  ==> 1
+x=2 , y^2 =  ==> no solution
+x=3 , y^2 =  ==> no solution
+x=4 , y^2 =  ==> 2,3,4
+
+the points: (0,0) (1,1) (4,2) (4,3) (4,4)

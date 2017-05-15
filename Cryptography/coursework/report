@@ -1,0 +1,146 @@
+# Cryptography Coursework
+
+## Outline
+
+## Solution for Cipher 1
+
+The competition is for papers that were published between December and October , and that show an outstanding contribution to cybersecurity science. The competition was created to stimulate research toward the development of systems that are resilient to cyber attacks. Entries are judged on scientific merit, the strength and significance of the work reported.
+
+## Cipher 1 Cryptanalysis
+
+The look of the cypher can seems to be of either a shift encryption(Ceasar), an advanced ceasar or a vigenere. Let's start with these 3 encryption algorithms.
+
+First step is to check for a shift encryption, this isn't conclusive. After trying all rotations nothing is conclusive (python script + fitness measure)7
+
+After that we look for frequency analysis for a special alphabet, this isn't conclusive either. 
+
+X	10.89%	33
+K	8.25%	25
+T	7.59%	23
+I	6.27%	19
+Z	5.94%	18
+G	5.28%	16
+U	4.62%	14
+M	4.62%	14
+H	4.62%	14
+B	3.63%	11
+C	3.63%	11
+Y	3.3%	10
+L	2.97%	9
+V	2.97%	9
+P	2.97%	9
+A	2.64%	8
+W	2.64%	8
+E	2.64%	8
+J	2.31%	7
+N	2.31%	7
+O	2.31%	7
+S	1.98%	6
+R	1.98%	6
+D	1.98%	6
+F	0.99%	3
+Q	0.66%	2
+
+After finding which has the highest percentage and trying the most common letters corresponding in the english alphabet, they don't create any meaningful words.
+
+After that we start looking for polyalphabetic cyphers:
+1. key length
+	a) Kasisky test:
+
+
+
+## Solution for Cipher 2
+
+## Cipher 2 Cryptanalysis
+
+The tip: ESC == A
+
+First observation, this cipher seems to be using all the chars in the basic ASCII table (with the ESC and ETB chars)
+
+Basic research isn't going o be enough because many automated tools don't work with ASCII alphabets, let's create our own scripts for this.
+
+It seems obvious when looking at the text there are a number of repeating patterns. By giving some restrictions on the size of the patterns, we find the larger pattern: "\x17<E?RzZ;E1R.\x17" which repeats itself 20 times.
+
+Let's use this information to find the probable key length:
+
+So we do an index research to find the distance and we have 4 hits: 1,309,459,713
+
+"\x17<E?RzZ;E1R.\x17": [1, 309, 459, 713] -> 
+d_12 = 309-14 = 295
+d_13 = 459-14 = 445
+d_14 = 713-14 = 699
+
+d_23 = 459-323 = 136
+d_24 = 713-323 = 390
+
+d_34 = 713-473 = 240
+
+so the only key length that is a gcd here for some of the patterns is 5
+
+
+
+
+
+
+
+## Solution for Cipher 3
+
+## Cipher 3 Cryptanalysis
+
+Since the look of the cipher is very different from the expected, lets do a simple frequency analysis to start:
+
+Q	8.79%	8
+J	8.79%	8
+B	6.59%	6
+_	6.59%	6
+S	5.49%	5
+M	5.49%	5
+K	4.4%	4
+D	4.4%	4
+R	4.4%	4
+F	4.4%	4
+U	4.4%	4
+W	4.4%	4
+@	3.3%	3
+C	3.3%	3
+P	3.3%	3
+X	3.3%	3
+A	2.2%	2
+V	2.2%	2
+^	2.2%	2
+Y	2.2%	2
+L	2.2%	2
+H	2.2%	2
+E	2.2%	2
+	1.1%	1
+[	1.1%	1
+Z	1.1%	1
+
+The problem is that the cipher is so short that these probabilities will probably not be very accurate.
+
+A	8.2 %	N	6.7 %
+B	1.5 %	O	7.5 %
+C	2.8 %	P	1.9 %
+D	4.3 %	Q	0.1 %
+E	12.7 %	R	6.0 %
+F	2.2 %	S	6.3 %
+G	2.0 %	T	9.1 %
+H	6.1 %	U	2.8 %
+I	7.0 %	V	1.0 %
+J	0.2 %	W	2.4 %
+K	0.8 %	X	0.2 %
+L	4.0 %	Y	2.0 %
+M	2.4 %	Z	0.1 %
+
+RYJWLRMCRYMSJFMUKSQCK^HEU_JZQQ@QPSQQFWPX@DFFQCD[LRJB@EWBKBU_DDK_J_QAMUHBMAJBV^WBS_VXPXJSJ_
+
+Since they use another alphabet we leave for later the possibility of a combination of encryptions:
+
+We have to consider that that ASCII alphabet is being used.
+
+
+## Appendix A
+
+## Appendix B
+
+## Appendix C

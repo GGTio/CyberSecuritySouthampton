@@ -1,0 +1,13 @@
+
+Use of attack trees in the analysis of cyber security threats (ok)
+All Aspects of Security (cool superviser, need to find subject)
+Risk Based Access Control (Harden authentication methods)
+A specification for blockchains (I like blockchains, this seems to be a way of implementing them)
+Low Cost Security Protocols for Resource-Constrained Systems (crypto for IoT)
+Wireless Physical Layer Security (very theoretical wireless security)
+Coding practices to mitigate risk holistically (soft eng and security + maintenance )
+
+Virtual Learning environment for Application Security (pretty cool, a lot of web dev with maybe a game/VR/enhaced reality goal)
+Sniffing out tampered, malicious and counterfeit parts (seems interesting, not sure if too low level)
+Engineering for secure solutions (improve current soft eng security approaches ? could be interesting)
+Security in the Internet of Things (system diagrams -> formal statements -> checked for consistency | might need more info to fully understand the project)

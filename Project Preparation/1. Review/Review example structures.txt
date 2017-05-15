@@ -1,0 +1,41 @@
+Review example structures
+
+a. Abstract - explain it's a review and the main topics approached.
+
+b. Core:
+	Intro
+	Overview of IoT
+		Concept of Iot
+		Purpose of Iot
+		Technology overview of the Iot
+		Applocation overview of the Iot
+	Processor & microcontroller dev kit
+		Overview of embedded processor kits
+		Raspberry pi
+		Arduino M10Pro
+	Conclusion
+	Acknowledgement
+	References
+
+-------------------
+
+b. Core:
+	Intro
+	Heterogerneous and reconfigurable multicore architectures
+		Heterogerneous multicore architectures
+		Reconfigurable multicore architectures
+		Both heterogerneous and reconfigurable multicore architectures
+	picoMIPS
+	JPEG decompression
+	Conclusion
+	References
+
+-------------------
+
+b. Core:
+	Intro and motivation
+	Aerial Imagery
+	Convolutional Neural Networks
+	What about scale?
+	Discussion
+	The gap / proposal (explain the interest of his research by explaining the existing gap in the field)

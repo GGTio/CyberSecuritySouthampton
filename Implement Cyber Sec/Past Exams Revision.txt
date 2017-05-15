@@ -12,18 +12,58 @@ DDos
 	- what ressources needed for such an attack?
 	- amplification attack? DNS to launch such an attack?
 	- suggestion to mitigate this attack?
+
 Botnets
 	- channels used to give commands? most effective ones?
 	- what messages/codes exchanged between bot and C&C.
-IPv6
-	- why IPv6 vuln are no concern for IPv4 only?
-
-Use case (company with website + login + server storage of passwords) - improve password management
-	- possible password attacks + how to remove those threats
-	- Suggest 5 improvements
-	- introduce PKI + explain pros and cons.
 
 Deep Brute-force + DES + 3DES + key distribution
 
 2013
 
+Keys-passwords
+	- key distribution -> solved by asymmetric to what extent ? (pros and cons)
+	- user-generated passwords vs asymmetric-encryption keys. How does it works + pros and cons.
+	- stream cypher with substitution technique, estimate the nb of possible alphabet substitutions, calculate the effective key length, compare it to AES.
+
+Botnet
+	- Possible attacks and countermeasures
+	- possible alternatives to control botnets
+	- Use of botnets in phising attacks
+	- DDos explanation + attacks
+
+2014
+
+Use case
+	- difference between XSS and CSFR, threats, detection and prevention.
+	- General web threats with their importance level + detection and avoid them.
+
+Cryptography
+	- Cesar code pros and cons
+	- keys + MITM attack explanation 
+	- how to use block to encrypt stream
+	- pros and cons of AES
+	- asymmetric option
+
+2015
+
+Manager training a colleague
+	- explain threats + examples + detection and exploitation for :
+		broken auth and session mngt, sensitive data exposure, SQL inject, unvalidated redirects and forwards, missing function-lvl Access control, XSS, insecure direct object references and CSRF
+	- passwords vs asymmetric to validate identity
+	- design such login + evaluate pros and cons of such system.
+
+Social engineering
+	- 3 examples + countermeasures
+
+Crypto
+	- collision resistance definition
+	- explain digital signature + its possible uses
+	- why is collision resistance important to digital signature?
+	- how is AES used to construct a 128-hash fct?
+	- example with this fct replacing AES with digit-by-digit mod 10 encryption.
+
+Crypto exercice
+	- pros and cons of electronic codebook mode
+	- pros and cons of block chaining mode
+	- strategies for the choice of an initialization vector + pros and cons.

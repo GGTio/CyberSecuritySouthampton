@@ -1,0 +1,4 @@
+http://rumkin.com/tools/cipher/ - cipher tools
+http://ptrow.com/perl/calculator.pl - modular arithmetic calculator
+http://www.cs.mtu.edu/~shene/NSF-4/EC-Downloads/index.html - elliptic curve
+http://www.cs.mtu.edu/~shene/NSF-4/DES-Downloads/index.html - DES visualization
